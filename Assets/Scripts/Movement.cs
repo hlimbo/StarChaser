@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveWithTime : MonoBehaviour {
-
-	//adjust position on vertical axis by 1 world-coordinate PER real second.
-	//attach to player and maybe boss
+public class Movement : MonoBehaviour {
+	private Transform transform;
 
 	// Use this for initialization
 	void Start () {
-		
+		transform = GetComponent<Transform> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		transform.Translate(transform.up * Time.deltaTime);
 	}
 }
