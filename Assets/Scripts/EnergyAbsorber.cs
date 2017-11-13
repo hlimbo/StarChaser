@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatteryField : MonoBehaviour {
+public class EnergyAbsorber : MonoBehaviour {
 
 	public int charge;
 	public float captureRadius;
