@@ -9,6 +9,8 @@ public class MotionController : MonoBehaviour {
     public float movePercent = 0.65f;
     //how sensitive is the device (e.g. phone) to changes in tracking touch positions
     private float tolerance = 0.0078125f;//2^-7
+    //area in which player vessel cannot move towards or inside of
+    public RectTransform abilityBar;
 
     void Start ()
     {
@@ -24,13 +26,18 @@ public class MotionController : MonoBehaviour {
 
     void TouchMovement()
     {
-        if (Input.touchCount == 1)
+        if (Input.touchCount >= 1)
         {
-            Touch oneTouch = Input.GetTouch(0);
-            Vector3 targetPos = Camera.main.ScreenToWorldPoint(oneTouch.position);
+            Touch firstTouch = Input.GetTouch(0);
+            //cancel movement commands if first touch is inside of ability bar
+            bool insideAbilityBar = RectTransformUtility.RectangleContainsScreenPoint(abilityBar, firstTouch.position);
+            if(insideAbilityBar)
+                return;
+
+            Vector3 targetPos = Camera.main.ScreenToWorldPoint(firstTouch.position);
             if ((targetPos - transform.position).sqrMagnitude > tolerance)
             {
-                switch (oneTouch.phase)
+                switch (firstTouch.phase)
                 {
                     case TouchPhase.Moved:
                     case TouchPhase.Stationary:
