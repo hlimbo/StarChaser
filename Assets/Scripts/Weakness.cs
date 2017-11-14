@@ -11,7 +11,11 @@ public class Weakness : MonoBehaviour {
         foreach(string weaknessTag in weaknessTags)
         {
             if (collision.tag == weaknessTag)
+            {
                 print("weakness touched: " + collision.tag);
+                Destroy(this.gameObject);
+                break;
+            }
         }
     }
 }

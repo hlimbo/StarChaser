@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 9992328}
   - component: {fileID: 9992327}
   - component: {fileID: 9992326}
+  - component: {fileID: 9992329}
   m_Layer: 0
   m_Name: Square
   m_TagString: square
@@ -211,6 +212,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9992329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 9992325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceaa8271c2bb04e9db48f5363c9c7fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaknessTags:
+  - laser
 --- !u!1 &122651779
 GameObject:
   m_ObjectHideFlags: 0
