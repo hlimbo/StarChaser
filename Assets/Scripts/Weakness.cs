@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Weakness : MonoBehaviour {
 
-	public string[] weaknessTag;
+	public string[] weaknessTags;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        foreach(string weaknessTag in weaknessTags)
+        {
+            if (collision.tag == weaknessTag)
+                print("weakness touched: " + collision.tag);
+        }
+    }
 }
