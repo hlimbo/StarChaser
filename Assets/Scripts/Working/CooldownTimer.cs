@@ -9,49 +9,72 @@ using UnityEngine;
 //by another script that requires its functionality.. e.g. player input component triggers the cooldown when shield effect activates with key press s.
 public class CooldownTimer : MonoBehaviour
 {
-    public float duration;
+    [System.Serializable]
+    public struct Timer
+    {
+        public float duration;
+        public float startTime;
+        public float elapsedTime;
+        public bool isTicking;
+    }
+
+    public Timer cdTimer;
+    public Timer abilityTimer;
+    [SerializeField]
+    private float totalDuration;
     public float updateFrequency = 1.0f;//how often the cooldown timer counts down by
-    [SerializeField]
-    private float startTime;
-    [SerializeField]
-    private float elapsedTime;
 
     //I'm using enabled flag because it is convenient to see when this component is on or off cooldown in the editor
-    public bool isOnCooldown { get { return this.enabled; } set { this.enabled = value; } }
-
-    public float GetCurrentCooldownTime()
-    {
-        return isOnCooldown ? duration - Mathf.Floor(elapsedTime) : 0.0f;
-    }
+    public bool isOnCooldown { get { return cdTimer.isTicking; } private set { cdTimer.isTicking = value; } }
+    public bool isAbilityActive { get { return abilityTimer.isTicking; } private set { abilityTimer.isTicking = value; } }
 
     void Awake()
     {
+        totalDuration = abilityTimer.duration + cdTimer.duration;
         //disable this script from calling Update() every frame
-        isOnCooldown = false;
+        this.enabled = false;
     }
 
     void OnEnable()
     {
-        StartCoroutine(Countdown());
-        startTime = Time.time;
+        //don't re-enable ability if ability is already active or on cooldown
+        if (isAbilityActive || isOnCooldown)
+            this.enabled = false;
+        else
+            StartCoroutine(AbilityCountdown());
     }
 
     void OnDisable()
     {
-        StopCoroutine(Countdown());
+        StopAllCoroutines();
     }
 
-    IEnumerator Countdown()
+    IEnumerator AbilityCountdown()
     {
-        startTime = Time.time;
-        elapsedTime = Time.time - startTime;
-        while (elapsedTime < duration)
+        abilityTimer.startTime = Time.time;
+        abilityTimer.elapsedTime = Time.time - abilityTimer.startTime;
+        abilityTimer.isTicking = true;
+        while (abilityTimer.elapsedTime < abilityTimer.duration)
         {
             yield return new WaitForSeconds(updateFrequency);
-            elapsedTime = Time.time - startTime;
+            abilityTimer.elapsedTime = Time.time - abilityTimer.startTime;
         }
+        abilityTimer.isTicking = false;
+        yield return CDCountdown();
+    }
 
-        isOnCooldown = false;
+    IEnumerator CDCountdown()
+    {
+        cdTimer.startTime = Time.time;
+        cdTimer.elapsedTime = Time.time - cdTimer.startTime;
+        cdTimer.isTicking = true;
+        while (cdTimer.elapsedTime < cdTimer.duration)
+        {
+            yield return new WaitForSeconds(updateFrequency);
+            cdTimer.elapsedTime = Time.time - cdTimer.startTime;
+        }
+        cdTimer.isTicking = false;
+        this.enabled = false;
         yield return null;
     }
 }
