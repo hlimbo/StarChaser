@@ -10,7 +10,7 @@ public class Weakness : MonoBehaviour {
     {
         foreach(string weaknessTag in weaknessTags)
         {
-            if (collision.tag.Contains(weaknessTag))
+            if (collision.tag.Equals(weaknessTag))
             {
                 Debug.Log("weakness touched: " + collision.tag);
                 Destroy(this.gameObject);
