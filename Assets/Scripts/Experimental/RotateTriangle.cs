@@ -16,5 +16,5 @@ public class RotateTriangle : MonoBehaviour {
 	void Update () {
         rb.MoveRotation(rb.rotation + angularVelocity * Time.deltaTime);
         //transform.Rotate(Vector3.forward, 30.0f * Time.deltaTime);
-	}
+    }
 }
