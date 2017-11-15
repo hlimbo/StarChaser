@@ -37,6 +37,7 @@ public class MotionController : MonoBehaviour {
                     case TouchPhase.Moved:
                     case TouchPhase.Stationary:
                         //lockPosition is the position of where the touch location should snap to e.g. touch location snaps underneath the player vessel
+                        //the offset will ultimately depend on the size of the player ship (e.g. can multiply Vector3.down by some scalar value to add more space between player ship and finger)
                         Vector3 lockPosition = transform.TransformPoint(Vector3.down);
                         lockPosition = Vector3.Lerp(lockPosition, targetPos, movePercent);
                         lockPosition.z = 0.0f;
