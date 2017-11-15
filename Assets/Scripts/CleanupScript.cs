@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CleanupScript : MonoBehaviour {
 
-	//ATTACH THIS TO CAMERA
+    //ATTACH THIS TO CAMERA
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Use this for initialization
+    void Start () {
+        
+    }
+    
+    // Update is called once per frame
+    void Update () {
+        
+    }
 }
