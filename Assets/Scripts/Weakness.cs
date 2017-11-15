@@ -10,9 +10,9 @@ public class Weakness : MonoBehaviour {
     {
         foreach(string weaknessTag in weaknessTags)
         {
-            if (collision.tag == weaknessTag)
+            if (collision.tag.Contains(weaknessTag))
             {
-                print("weakness touched: " + collision.tag);
+                Debug.Log("weakness touched: " + collision.tag);
                 Destroy(this.gameObject);
                 break;
             }
