@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 114134846504534270}
   - component: {fileID: 70497656043475788}
   - component: {fileID: 50398844961736078}
+  - component: {fileID: 114151257403851748}
+  - component: {fileID: 114055142636432648}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: bullet
@@ -78,6 +80,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!114 &114055142636432648
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1430596920637506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2baa03123adb1934b900a81399560a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camHalfWidth: 0
+  camHalfHeight: 0
 --- !u!114 &114134846504534270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,6 +106,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   angle: 0
+--- !u!114 &114151257403851748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1430596920637506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceaa8271c2bb04e9db48f5363c9c7fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaknessTags:
+  - shield
 --- !u!212 &212187263424013466
 SpriteRenderer:
   m_ObjectHideFlags: 1
