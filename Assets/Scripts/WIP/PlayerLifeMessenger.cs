@@ -25,12 +25,14 @@ public class PlayerLifeMessenger : MonoBehaviour, ILifeMessenger {
     public void LoseLife()
     {
         Debug.Log("Lose 1 life");
-        hearts[(lives--) - 1].enabled = false;
+        hearts[Mathf.Clamp(lives - 1,0,maxLives - 1)].enabled = false;
+        lives = Mathf.Clamp(--lives, 0, maxLives);
     }
 
     public void GainLife()
     {
         Debug.Log("Gain 1 life");
-        hearts[(Mathf.Clamp(++lives, 0, maxLives))].enabled = true;
+        hearts[Mathf.Clamp(lives - 1,0,maxLives - 1)].enabled = true;
+        lives = Mathf.Clamp(++lives, 0, maxLives);
     }
 }
