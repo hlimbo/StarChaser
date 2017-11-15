@@ -535,9 +535,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
     type: 2}
-  fireRate: 1
+  fireRate: 5
   speed: 2.5
-  angle: 45
+  angle: 0
 --- !u!114 &262546076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1252,6 +1252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ca276926ae53d47ac53a6eaaf7021e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angularVelocity: 45
 --- !u!50 &1254873537
 Rigidbody2D:
   serializedVersion: 4

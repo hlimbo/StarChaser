@@ -21,7 +21,7 @@ public class Emitter : MonoBehaviour {
         while(true)
         {
             GameObject bullet = Instantiate<GameObject>(projectilePrefab,transform.position,Quaternion.identity);
-            bullet.GetComponent<Projectile>().Init(speed, angle);
+            bullet.GetComponent<Projectile>().Init(speed, -transform.parent.GetComponent<Rigidbody2D>().rotation + angle);
             yield return new WaitForSeconds(1f / fireRate);
         }
     }

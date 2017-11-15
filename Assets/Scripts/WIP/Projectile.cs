@@ -21,6 +21,7 @@ public class Projectile : MonoBehaviour {
     {
         //thanks unity for inverting x and y values :)
         velocity = new Vector2(Mathf.Sin(angle * Mathf.Deg2Rad), Mathf.Cos(angle * Mathf.Deg2Rad)) * speed;
+       // velocity = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)) * speed;
         rb = GetComponent<Rigidbody2D>();
         rb.rotation = angle;
         transform.rotation = Quaternion.Euler(0f, 0f, -rb.rotation);
