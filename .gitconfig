@@ -1,6 +1,0 @@
-[filter "tabs_to_4_spaces"]
-    clean = expand -t 4
-    smudge = expand -t 4
-    required
-[merge]
-    renormalize = true
