@@ -12,12 +12,12 @@ public class MotionController : MonoBehaviour {
     //area in which player vessel cannot move towards or inside of
     public RectTransform abilityBar;
 
-	void Update ()
+    void Update ()
     {
         //make sure you are running Unity Remote 5 with your phone plugged in via usb
         //to see the code run in action
         TouchMovement();
-	}
+    }
 
     void TouchMovement()
     {

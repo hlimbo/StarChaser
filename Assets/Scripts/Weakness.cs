@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weakness : MonoBehaviour {
 
-	public string[] weaknessTags;
+    public string[] weaknessTags;
 
     void OnTriggerEnter2D(Collider2D collision)
     {

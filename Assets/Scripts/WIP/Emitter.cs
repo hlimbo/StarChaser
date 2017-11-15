@@ -10,11 +10,11 @@ public class Emitter : MonoBehaviour {
     public float speed;
     public float angle;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         StartCoroutine(FireProjectile());
-	}
+    }
 
     IEnumerator FireProjectile()
     {

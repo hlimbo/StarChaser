@@ -12,8 +12,8 @@ public class RotateTriangle : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
     }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
         rb.MoveRotation(rb.rotation + angularVelocity * Time.deltaTime);
         //transform.Rotate(Vector3.forward, 30.0f * Time.deltaTime);
     }
