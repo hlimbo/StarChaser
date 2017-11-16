@@ -26,7 +26,6 @@ public class PlayerLaser : MonoBehaviour {
     {
         if(!laserCD.isAbilityActive)
         {
-            laser.transform.rotation = Quaternion.identity;
             laser.SetActive(false);
         }
     }
