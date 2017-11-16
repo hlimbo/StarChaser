@@ -26,6 +26,7 @@ public class PlayerLaser : MonoBehaviour {
     {
         if(!laserCD.isAbilityActive)
         {
+            laser.transform.rotation = Quaternion.identity;
             laser.SetActive(false);
         }
     }
@@ -39,6 +40,9 @@ public class PlayerLaser : MonoBehaviour {
             laserCD.enabled = true;
             laser.SetActive(true);
             //todo: calculate laser orientation here
+            Vector2 tip = transform.position;
+            Vector2 targetPos = Camera.main.ScreenToWorldPoint(data.position);
+            laser.transform.rotation = Quaternion.FromToRotation(Vector3.up, (Vector3)(targetPos - tip));
         }
     }
 }
