@@ -2,18 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnergyAbsorber : MonoBehaviour {
+public class EnergyAbsorber : MonoBehaviour
+{
 
     public int charge;
-    public float captureRadius;
+    public int maxCharge;
 
     // Use this for initialization
-    void Start () {
-        
+    void Start()
+    {
+        charge = 0;
     }
-    
+
     // Update is called once per frame
-    void Update () {
-        
+    void Update()
+    {
+
     }
+
+    void OnTriggerEnter(Collider2D bullets)
+    {
+        if (charge < maxCharge)
+            charge++;
+
+    }
+
 }
