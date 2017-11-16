@@ -14,7 +14,10 @@ public class PlayerLaser : MonoBehaviour {
         trigger = GetComponent<EventTrigger>();
         laserCD = GetComponent<CooldownTimer>();
         box = GetComponent<BoxCollider2D>();
-        EventTriggerHelper.AddEvent(trigger, EventTriggerType.PointerDown, Laser);
+        //drag and then remove finger off screen to fire laser
+        EventTriggerHelper.AddEvent(trigger, EventTriggerType.EndDrag, Laser);
+        //tap the screen to fire laser
+        //EventTriggerHelper.AddEvent(trigger, EventTriggerType.PointerDown, Laser);
 
         float camWidth = Camera.main.orthographicSize * Camera.main.aspect * 2f;
         float camHeight = Camera.main.orthographicSize * 2f;
@@ -30,7 +33,7 @@ public class PlayerLaser : MonoBehaviour {
         }
     }
 
-    //PointerDown
+    //PointerDown ~ touch press to shoot laser
     public void Laser(PointerEventData data)
     {
         if(!laser.activeInHierarchy && !laserCD.isOnCooldown)
@@ -42,6 +45,10 @@ public class PlayerLaser : MonoBehaviour {
             Vector2 tip = transform.position;
             Vector2 targetPos = Camera.main.ScreenToWorldPoint(data.position);
             laser.transform.rotation = Quaternion.FromToRotation(Vector3.up, (Vector3)(targetPos - tip));
+            
+            //todo: change the length of the laser depending how far away you click from the ship.
+            //(targetPos - tip).magnitude
+
         }
     }
 }
