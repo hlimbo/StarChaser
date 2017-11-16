@@ -20,7 +20,7 @@ public class EnergyAbsorber : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider2D bullets)
+    void OnTriggerEnter2D(Collider2D bullets)
     {
         if (charge < maxCharge)
             charge++;

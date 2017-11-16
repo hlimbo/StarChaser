@@ -11,12 +11,12 @@ public class DestroyProjectile : MonoBehaviour {
     private float camHalfHeight;
     private Camera mainCam;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         mainCam = Camera.main;
         camHalfWidth = (mainCam.orthographicSize * 2 * mainCam.aspect) / 2f;
         camHalfHeight = mainCam.orthographicSize;
-	}
+    }
 
     // Update is called once per frame
     void Update() {
@@ -28,5 +28,5 @@ public class DestroyProjectile : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
-	}
+    }
 }

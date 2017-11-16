@@ -9,6 +9,7 @@ TagManager:
   - player
   - square
   - bullet
+  - shipPivot
   layers:
   - Default
   - TransparentFX
