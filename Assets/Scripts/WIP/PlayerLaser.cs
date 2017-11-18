@@ -5,15 +5,21 @@ using UnityEngine.EventSystems;
 public class PlayerLaser : MonoBehaviour {
 
     public GameObject laser;
+    public EnergyAbsorber EnergyScript;
     private CooldownTimer laserCD;
     private EventTrigger trigger;
     private BoxCollider2D box;
+
 
     void Start ()
     {
         trigger = GetComponent<EventTrigger>();
         laserCD = GetComponent<CooldownTimer>();
         box = GetComponent<BoxCollider2D>();
+
+        //EnergyScript = GameObject.Find("Shield").GetComponent<EnergyAbsorber>();
+        //For some reason this breaks the laser
+
         //drag and then remove finger off screen to fire laser
         //EventTriggerHelper.AddEvent(trigger, EventTriggerType.EndDrag, Laser);
         //tap the screen to fire laser
@@ -41,6 +47,7 @@ public class PlayerLaser : MonoBehaviour {
     {
         if(!laser.activeInHierarchy && !laserCD.isOnCooldown)
         {
+            //TODO: if EnergyScript.charge == EnergyScript.maxCharge
             Debug.Log("laser");
             laserCD.enabled = true;
             laser.SetActive(true);
