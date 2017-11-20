@@ -1048,6 +1048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 1781182444}
+  shieldRef: {fileID: 1320522155}
   EnergyScript: {fileID: 0}
 --- !u!114 &906591493
 MonoBehaviour:
@@ -1542,7 +1543,7 @@ RectTransform:
   m_GameObject: {fileID: 1993482035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.005207876, y: 0.005207876, z: 0.005207876}
+  m_LocalScale: {x: 0.005209264, y: 0.005209264, z: 0.005209264}
   m_Children:
   - {fileID: 1482403132}
   m_Father: {fileID: 0}
