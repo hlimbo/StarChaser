@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//DO NOT USE THIS BEHAVIOUR SCRIPT!!!!!!!!!!!!!! ADD JANITOR TAG TO WEAKNESSES!!!!!!!!!!!!
+
 //destroy gameObject when it leaves orthographic camera view
 public class DestroyProjectile : MonoBehaviour {
 
