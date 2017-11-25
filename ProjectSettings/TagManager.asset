@@ -4,12 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - shield
-  - laser
-  - player
-  - square
-  - bullet
-  - shipPivot
+  - Shield
+  - Laser
+  - Square
+  - Pivot
+  - Enemy
+  - Air
   layers:
   - Default
   - TransparentFX

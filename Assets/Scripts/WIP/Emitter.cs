@@ -12,7 +12,7 @@ public class Emitter : MonoBehaviour {
         public float fireRate = 1.0f;
 
         [Tooltip("'StraightLineBullet' prefab takes 2 args: angle, speed.\n" +
-            "'HomingMissile' prefab takes 3 args: speed, fuel, maxDistance.\n" +
+            "'HomingMissile' prefab takes 3 args: speed, fuel, unfocusRange.\n" +
             "'ParametricProjectile' prefab takes ")]
         public float[] args;
     }
