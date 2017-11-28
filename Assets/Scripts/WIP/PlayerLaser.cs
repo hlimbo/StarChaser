@@ -9,13 +9,13 @@ public class PlayerLaser : MonoBehaviour {
     public EnergyAbsorber EnergyScript;
     private CooldownTimer laserCD;
     private EventTrigger trigger;
-    private BoxCollider2D box;
+    //private BoxCollider2D box;
 
     void Start ()
     {
         trigger = GetComponent<EventTrigger>();
         laserCD = GetComponent<CooldownTimer>();
-        box = GetComponent<BoxCollider2D>();
+       // box = GetComponent<BoxCollider2D>();
 
         EnergyScript = shieldRef.GetComponent<EnergyAbsorber>();
 
@@ -25,13 +25,13 @@ public class PlayerLaser : MonoBehaviour {
         EventTriggerHelper.AddEvent(trigger, EventTriggerType.PointerDown, Laser);
 
         //calculate the size of the bounding box collider to be as twice as wide as camera
-        {
-            float camWidth = Camera.main.orthographicSize * Camera.main.aspect * 2f;
-            float camHeight = Camera.main.orthographicSize * 2f;
-            box.size = new Vector2(camWidth * 2.5f, camHeight);
-            box.offset = new Vector2(0f, camHeight / 2f);
-            box.transform.localPosition = new Vector3(0f, 0.65f, 0f);
-        }
+        //{
+        //    float camWidth = Camera.main.orthographicSize * Camera.main.aspect * 2f;
+        //    float camHeight = Camera.main.orthographicSize * 2f;
+        //    box.size = new Vector2(camWidth * 2.5f, camHeight);
+        //    box.offset = new Vector2(0f, camHeight / 2f);
+        //    box.transform.localPosition = new Vector3(0f, 0.65f, 0f);
+        //}
     }
     
     void Update ()
