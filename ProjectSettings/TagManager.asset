@@ -15,6 +15,8 @@ TagManager:
   - shipPivot
   - laser
   - Bullet
+  - shield
+  - Wakebar
   layers:
   - Default
   - TransparentFX
