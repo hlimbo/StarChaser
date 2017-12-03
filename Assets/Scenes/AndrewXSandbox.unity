@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163361c0c6c444366b31c0d09ff56168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 1
 --- !u!1001 &1241934383
 Prefab:
   m_ObjectHideFlags: 0
@@ -243,6 +243,11 @@ Prefab:
     - target: {fileID: 4741583381261020, guid: 05295a124a7384759bfe459c712b1524, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114661743845980802, guid: 05295a124a7384759bfe459c712b1524,
+        type: 2}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05295a124a7384759bfe459c712b1524, type: 2}
@@ -334,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163361c0c6c444366b31c0d09ff56168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 1
 --- !u!114 &1733577417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitters:
-  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+  - projectilePrefab: {fileID: 1005465657642286, guid: 071c60b35c83441aeb6fee195ead882c,
       type: 2}
     offset: {x: 0, y: -1.5, z: 0}
     fireRate: 1.5
