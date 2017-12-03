@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitters:
-  - projectilePrefab: {fileID: 1005465657642286, guid: 071c60b35c83441aeb6fee195ead882c,
+  - projectilePrefab: {fileID: 1571705040099150, guid: cca858567cb964290b3e4453ac1512f3,
       type: 2}
     offset: {x: 0, y: -1.5, z: 0}
     fireRate: 1.5
