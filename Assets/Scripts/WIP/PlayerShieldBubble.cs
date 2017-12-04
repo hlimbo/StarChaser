@@ -8,6 +8,7 @@ public class PlayerShieldBubble : MonoBehaviour{
     private CapsuleCollider2D shipHitbox;
     private CooldownTimer shieldCD;
     private EventTrigger trigger;
+    private Animator shipAnim;
 
     void Start()
     {
@@ -15,6 +16,7 @@ public class PlayerShieldBubble : MonoBehaviour{
         EventTriggerHelper.AddEvent(trigger, EventTriggerType.PointerDown, Shield);
         shieldCD = GetComponent<CooldownTimer>();
         shipHitbox = playerShip.GetComponent<CapsuleCollider2D>();
+        shipAnim = playerShip.GetComponent<Animator>();
     }
 
     void Update()
@@ -23,6 +25,7 @@ public class PlayerShieldBubble : MonoBehaviour{
         {
             shield.SetActive(false);
             shipHitbox.enabled = true;
+            shipAnim.SetBool("shieldActive", false);
         }
     }
 
@@ -34,6 +37,7 @@ public class PlayerShieldBubble : MonoBehaviour{
             shieldCD.enabled = true;
             shield.SetActive(true);
             shipHitbox.enabled = false;
+            shipAnim.SetBool("shieldActive", true);
         }
     }
 }

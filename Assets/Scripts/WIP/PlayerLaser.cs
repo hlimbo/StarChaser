@@ -6,16 +6,20 @@ public class PlayerLaser : MonoBehaviour {
 
     public GameObject laser;
     public GameObject shieldRef;
-    public EnergyAbsorber EnergyScript;
+    public GameObject playerShip;
+
+    private EnergyAbsorber EnergyScript;
     private CooldownTimer laserCD;
     private EventTrigger trigger;
     //private BoxCollider2D box;
+    private Animator shipAnim;
 
     void Start ()
     {
         trigger = GetComponent<EventTrigger>();
         laserCD = GetComponent<CooldownTimer>();
-       // box = GetComponent<BoxCollider2D>();
+        // box = GetComponent<BoxCollider2D>();
+        shipAnim = playerShip.GetComponent<Animator>();
 
         EnergyScript = shieldRef.GetComponent<EnergyAbsorber>();
 
@@ -39,6 +43,7 @@ public class PlayerLaser : MonoBehaviour {
         if(!laserCD.isAbilityActive)
         {
             laser.SetActive(false);
+            shipAnim.SetBool("laserActive", false);
         }
     }
 
@@ -52,12 +57,8 @@ public class PlayerLaser : MonoBehaviour {
                 Debug.Log("laser");
                 laserCD.enabled = true;
                 laser.SetActive(true);
+                shipAnim.SetBool("laserActive", true);
             }
-
-            //laser orientation ~ may scrap
-           // Vector2 tip = transform.position;
-           // Vector2 targetPos = Camera.main.ScreenToWorldPoint(data.position);
-           // laser.transform.rotation = Quaternion.FromToRotation(Vector3.up, (Vector3)(targetPos - tip));
 
         }
     }
