@@ -10,10 +10,24 @@ public class EnergyAbsorber : MonoBehaviour
     public int maxCharge;
     public Slider laserBar;
 
+    float currentChargePercent;
+    float targetChargePercent;
+
     // Use this for initialization
     void Start()
     {
         charge = 0;
+        currentChargePercent = targetChargePercent = 0f;
+    }
+
+    void Update()
+    {
+        if(currentChargePercent < targetChargePercent)
+        {
+            //smoothly move laser bar up to current charge
+            currentChargePercent += ((float)charge / maxCharge) * Time.deltaTime;
+            laserBar.value = currentChargePercent;
+        }
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -22,9 +36,10 @@ public class EnergyAbsorber : MonoBehaviour
         {
             if (charge + 1 <= maxCharge)
             {
-               // float oldValue = (float)charge / maxCharge;
-                float newValue = (float)(charge + 1) / maxCharge;
-                laserBar.value = newValue;
+                // float oldValue = (float)charge / maxCharge;
+                currentChargePercent = (float)charge / maxCharge;
+                targetChargePercent = (float)(charge + 1) / maxCharge;
+                //laserBar.value = newValue;
                 ++charge;
             }
         }
