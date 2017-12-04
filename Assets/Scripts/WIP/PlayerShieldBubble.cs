@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlayerShieldBubble : MonoBehaviour{
 
@@ -10,6 +11,9 @@ public class PlayerShieldBubble : MonoBehaviour{
     private EventTrigger trigger;
     private Animator shipAnim;
     private AudioSource audioSrc;
+
+    private Image bg_ready;
+    private Image bg_cooldown;
 
     public AudioClip shieldOnFX;
     public AudioClip shieldOffFX;
@@ -22,6 +26,9 @@ public class PlayerShieldBubble : MonoBehaviour{
         audioSrc = GetComponent<AudioSource>();
         shipHitbox = playerShip.GetComponent<CapsuleCollider2D>();
         shipAnim = playerShip.GetComponent<Animator>();
+
+        bg_cooldown = transform.GetChild(0).GetComponent<Image>();
+        bg_ready = transform.GetChild(1).GetComponent<Image>();
     }
 
     void Update()
@@ -32,6 +39,15 @@ public class PlayerShieldBubble : MonoBehaviour{
             shipHitbox.enabled = true;
             audioSrc.clip = shieldOffFX;
             audioSrc.Play();
+        }
+
+        if (shieldCD.isOnCooldown)
+        {
+            bg_ready.fillAmount += (shieldCD.updateFrequency / shieldCD.cdTimer.duration) * Time.deltaTime;
+        }
+        else if (!shieldCD.isAbilityActive && !shieldCD.isOnCooldown)
+        {
+            bg_ready.fillAmount = 1f;//take into account small numerical error when adding up fillamount back to 1
         }
     }
 
@@ -45,6 +61,7 @@ public class PlayerShieldBubble : MonoBehaviour{
             shipHitbox.enabled = false;
             audioSrc.clip = shieldOnFX;
             audioSrc.Play();
+            bg_ready.fillAmount = 0f;
         }
     }
 }
