@@ -7,6 +7,7 @@ public class MotionController2 : MonoBehaviour {
     private Rigidbody2D rb;
     private EventTrigger trigger;
     private Movement camMovement;
+    private BoxCollider2D moveableArea;
 
     [Tooltip("Measured in unity units per second")]
     public float speed = 10f;
@@ -22,6 +23,13 @@ public class MotionController2 : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody2D>();
         camMovement = Camera.main.GetComponent<Movement>();
+        moveableArea = GetComponent<BoxCollider2D>();
+        moveableArea.size = new Vector2(Camera.main.orthographicSize * Camera.main.aspect, Camera.main.orthographicSize);//new Vector2(Camera.main.orthographicSize * 2f * Camera.main.aspect, Camera.main.orthographicSize * 2f);
+        trigger = GetComponent<EventTrigger>();
+        //data is PointerEventData type
+        //onpointerdown is fired only when the cursor/finger is on the shipPivot for the first frame.
+        EventTriggerHelper.AddEvent(trigger, EventTriggerType.PointerDown, (data) => { fingerMoveId = (IsTouchingAbilityBar(data.position))? -1 : data.pointerId; });
+        EventTriggerHelper.AddEvent(trigger, EventTriggerType.PointerUp, (data) => { fingerMoveId = -1; });
     }
 
     //stops movement when abilitybar is clicked
@@ -32,9 +40,10 @@ public class MotionController2 : MonoBehaviour {
 
     void Update()
     {
-        if (Input.touchSupported)
-        {
-            if (Input.touchCount > 0)
+       if (Input.touchSupported)
+       {
+            //only process movement if finger is on screen and finger is not on abilitybar
+            if (Input.touchCount > 0 && fingerMoveId != -1)
             {
                 //get correct finger associated with moving the ship
                 Vector2 fingerPos = Vector2.zero;
@@ -48,36 +57,29 @@ public class MotionController2 : MonoBehaviour {
                     }
                 }
 
-                //process movement command if finger moving ship isn't on ability bar
-                if (!IsTouchingAbilityBar(fingerPos))
-                {
-                    //move ship
-                    Vector3 targetPos = Camera.main.ScreenToWorldPoint(fingerPos);
-                    targetPos.z = 0f;
-                    Vector3 lockPosition = transform.TransformPoint(Vector3.down * targetOffset);
-                    Vector3 delta = (targetPos - lockPosition).normalized;
-                    transform.position = Vector3.MoveTowards(transform.position, targetPos + Vector3.up * targetOffset, speed * Time.deltaTime);
-                }
-                else
-                {
-                    transform.Translate(camMovement.transform.up * Time.deltaTime * camMovement.speed);
-                }
+                //move ship
+                Vector3 targetPos = Camera.main.ScreenToWorldPoint(fingerPos);
+                targetPos.z = 0f;
+                Vector3 lockPosition = transform.TransformPoint(Vector3.down * targetOffset);
+                Vector3 delta = (targetPos - lockPosition).normalized;
+                transform.position = Vector3.MoveTowards(transform.position, targetPos + Vector3.up * targetOffset, speed * Time.deltaTime);
+                
             }
             else //move ship along with camera if ship isn't being moved by player
             {
                 transform.Translate(camMovement.transform.up * Time.deltaTime * camMovement.speed);
             }
         }
-        else if(Input.mousePresent)//mouse controls
+        else if (Input.mousePresent)//mouse controls
         {
-            if(Input.GetMouseButton(0) && !IsTouchingAbilityBar(Input.mousePosition))
+            if (Input.GetMouseButton(0) && !IsTouchingAbilityBar(Input.mousePosition))
             {
-                    //move ship
-                    Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    targetPos.z = 0f;
-                    Vector3 lockPosition = transform.TransformPoint(Vector3.down * targetOffset);
-                    Vector3 delta = (targetPos - lockPosition).normalized;
-                    transform.position = Vector3.MoveTowards(transform.position, targetPos + Vector3.up * targetOffset, speed * Time.deltaTime);
+                //move ship
+                Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                targetPos.z = 0f;
+                Vector3 lockPosition = transform.TransformPoint(Vector3.down * targetOffset);
+                Vector3 delta = (targetPos - lockPosition).normalized;
+                transform.position = Vector3.MoveTowards(transform.position, targetPos + Vector3.up * targetOffset, speed * Time.deltaTime);
             }
             else //move ship along with camera if ship isn't being moved by player
             {

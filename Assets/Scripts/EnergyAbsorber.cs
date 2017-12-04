@@ -18,7 +18,7 @@ public class EnergyAbsorber : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D bullets)
     {
-        Debug.Log("collision");
+       // Debug.Log("collision");
         if (charge < maxCharge)
             charge++;
 

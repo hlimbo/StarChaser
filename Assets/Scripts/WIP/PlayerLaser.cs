@@ -13,11 +13,13 @@ public class PlayerLaser : MonoBehaviour {
     private EventTrigger trigger;
     //private BoxCollider2D box;
     private Animator shipAnim;
+    private AudioSource audioSrc;
 
     void Start ()
     {
         trigger = GetComponent<EventTrigger>();
         laserCD = GetComponent<CooldownTimer>();
+        audioSrc = GetComponent<AudioSource>();
         // box = GetComponent<BoxCollider2D>();
         shipAnim = playerShip.GetComponent<Animator>();
 
@@ -58,6 +60,7 @@ public class PlayerLaser : MonoBehaviour {
                 laserCD.enabled = true;
                 laser.SetActive(true);
                 shipAnim.SetBool("laserActive", true);
+                audioSrc.Play();
             }
 
         }
