@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnergyAbsorber : MonoBehaviour
 {
-
+    public string tagToAbsorb;
     public int charge;
     public int maxCharge;
     public Slider laserBar;
@@ -15,14 +15,19 @@ public class EnergyAbsorber : MonoBehaviour
     {
         charge = 0;
     }
-
-    void OnTriggerEnter2D(Collider2D bullets)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-       // Debug.Log("collision");
-        if (charge < maxCharge)
-            charge++;
-
-        laserBar.value = (float)charge / maxCharge;
+        // Debug.Log("collision");
+        if (tagToAbsorb.Equals(collider.tag))
+        {
+            if (charge + 1 <= maxCharge)
+            {
+               // float oldValue = (float)charge / maxCharge;
+                float newValue = (float)(charge + 1) / maxCharge;
+                laserBar.value = newValue;
+                ++charge;
+            }
+        }
     }
 
     

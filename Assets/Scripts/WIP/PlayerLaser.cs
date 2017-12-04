@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 
 public class PlayerLaser : MonoBehaviour {
@@ -14,12 +16,14 @@ public class PlayerLaser : MonoBehaviour {
     //private BoxCollider2D box;
     private Animator shipAnim;
     private AudioSource audioSrc;
+    private Slider laserBar;
 
     void Start ()
     {
         trigger = GetComponent<EventTrigger>();
         laserCD = GetComponent<CooldownTimer>();
         audioSrc = GetComponent<AudioSource>();
+        laserBar = GetComponent<Slider>();
         // box = GetComponent<BoxCollider2D>();
         shipAnim = playerShip.GetComponent<Animator>();
 
@@ -49,6 +53,18 @@ public class PlayerLaser : MonoBehaviour {
         }
     }
 
+    IEnumerator DecreaseLaserCharge()
+    {
+        while(laserCD.abilityTimer.isTicking)
+        {
+            float f = laserCD.updateFrequency / (laserCD.abilityTimer.duration * 2f);
+            laserBar.value -= f / laserCD.abilityTimer.duration;
+            yield return new WaitForSeconds(f);
+        }
+        EnergyScript.charge = 0;
+        yield return null;
+    }
+
     //PointerDown ~ touch press to shoot laser
     public void Laser(PointerEventData data)
     {
@@ -61,6 +77,7 @@ public class PlayerLaser : MonoBehaviour {
                 laser.SetActive(true);
                 shipAnim.SetBool("laserActive", true);
                 audioSrc.Play();
+                StartCoroutine(DecreaseLaserCharge());
             }
 
         }
