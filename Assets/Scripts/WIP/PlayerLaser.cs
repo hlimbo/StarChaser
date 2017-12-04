@@ -13,7 +13,6 @@ public class PlayerLaser : MonoBehaviour {
     private EnergyAbsorber EnergyScript;
     private CooldownTimer laserCD;
     private EventTrigger trigger;
-    //private BoxCollider2D box;
     private Animator shipAnim;
     private AudioSource audioSrc;
     private Slider laserBar;
@@ -24,7 +23,6 @@ public class PlayerLaser : MonoBehaviour {
         laserCD = GetComponent<CooldownTimer>();
         audioSrc = GetComponent<AudioSource>();
         laserBar = GetComponent<Slider>();
-        // box = GetComponent<BoxCollider2D>();
         shipAnim = playerShip.GetComponent<Animator>();
 
         EnergyScript = shieldRef.GetComponent<EnergyAbsorber>();
@@ -33,15 +31,6 @@ public class PlayerLaser : MonoBehaviour {
         //EventTriggerHelper.AddEvent(trigger, EventTriggerType.EndDrag, Laser);
         //tap the screen to fire laser
         EventTriggerHelper.AddEvent(trigger, EventTriggerType.PointerDown, Laser);
-
-        //calculate the size of the bounding box collider to be as twice as wide as camera
-        //{
-        //    float camWidth = Camera.main.orthographicSize * Camera.main.aspect * 2f;
-        //    float camHeight = Camera.main.orthographicSize * 2f;
-        //    box.size = new Vector2(camWidth * 2.5f, camHeight);
-        //    box.offset = new Vector2(0f, camHeight / 2f);
-        //    box.transform.localPosition = new Vector3(0f, 0.65f, 0f);
-        //}
     }
     
     void Update ()
@@ -51,18 +40,11 @@ public class PlayerLaser : MonoBehaviour {
             laser.SetActive(false);
             shipAnim.SetBool("laserActive", false);
         }
-    }
-
-    IEnumerator DecreaseLaserCharge()
-    {
-        while(laserCD.abilityTimer.isTicking)
+        else if(laserCD.isAbilityActive) //decrease charge over time
         {
-            float f = laserCD.updateFrequency / (laserCD.abilityTimer.duration * 2f);
-            laserBar.value -= f / laserCD.abilityTimer.duration;
-            yield return new WaitForSeconds(f);
+            laserBar.value -= (laserCD.updateFrequency / laserCD.abilityTimer.duration) * Time.deltaTime;
+            EnergyScript.charge = 0;
         }
-        EnergyScript.charge = 0;
-        yield return null;
     }
 
     //PointerDown ~ touch press to shoot laser
@@ -72,12 +54,11 @@ public class PlayerLaser : MonoBehaviour {
         {
             if (EnergyScript.charge == EnergyScript.maxCharge)
             {
-                Debug.Log("laser");
+                //Debug.Log("laser");
+                shipAnim.SetBool("laserActive", true);
                 laserCD.enabled = true;
                 laser.SetActive(true);
-                shipAnim.SetBool("laserActive", true);
                 audioSrc.Play();
-                StartCoroutine(DecreaseLaserCharge());
             }
 
         }

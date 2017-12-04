@@ -30,7 +30,6 @@ public class PlayerShieldBubble : MonoBehaviour{
         {
             shield.SetActive(false);
             shipHitbox.enabled = true;
-            shipAnim.SetBool("shieldActive", false);
             audioSrc.clip = shieldOffFX;
             audioSrc.Play();
         }
@@ -40,11 +39,10 @@ public class PlayerShieldBubble : MonoBehaviour{
     {
         if (!shield.activeInHierarchy && !shieldCD.isOnCooldown)
         {
-            Debug.Log("shield");
+            //Debug.Log("shield");
             shieldCD.enabled = true;
             shield.SetActive(true);
             shipHitbox.enabled = false;
-            shipAnim.SetBool("shieldActive", true);
             audioSrc.clip = shieldOnFX;
             audioSrc.Play();
         }
