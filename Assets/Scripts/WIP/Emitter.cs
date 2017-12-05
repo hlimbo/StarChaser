@@ -42,7 +42,9 @@ public class Emitter : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        StartCoroutine(FireProjectile());
+        foreach (EmitterOrigin e in emitters) {
+            StartCoroutine (FireProjectile (e));
+        }
     }
 
     void Update ()
@@ -53,38 +55,36 @@ public class Emitter : MonoBehaviour {
         }
     }
 
-    IEnumerator FireProjectile()
+    IEnumerator FireProjectile(EmitterOrigin e)
     {
         while(true)
         {
-            foreach (EmitterOrigin e in emitters) {
-                if (e.initDelay <= 0.0f) {
-                    GameObject bullet = Instantiate<GameObject> (e.projectilePrefab, transform.position + e.offset, Quaternion.identity);
-                    bullet.GetComponent<Movement> ().speed = e.speed;
-                    bullet.transform.rotation = Quaternion.Euler (0.0f, 0.0f, e.angle);
+            if (e.initDelay <= 0.0f) {
+                GameObject bullet = Instantiate<GameObject> (e.projectilePrefab, transform.position + e.offset, Quaternion.identity);
+                bullet.GetComponent<Movement> ().speed = e.speed;
+                bullet.transform.rotation = Quaternion.Euler (0.0f, 0.0f, e.angle);
 
-                    if (bullet.GetComponent<Acceleration> () != null) {
-                        bullet.GetComponent<Acceleration> ().acceleration = e.acceleration;
-                    }
-
-                    if (bullet.GetComponent<Homing> () != null) {
-                        bullet.GetComponent<Homing> ().fuel = e.fuel;
-                        bullet.GetComponent<Homing> ().unfocusRange = e.unfocusRange;
-                    }
-
-                    if (bullet.GetComponent<PredeterminedTurn> () != null) {
-                        bullet.GetComponent<PredeterminedTurn> ().repeating = e.loopsTurning;
-                        bullet.GetComponent<PredeterminedTurn> ().turns = new PredeterminedTurn.Turn[e.turns.Length];
-                        for (int i = 0; i < e.turns.Length; ++i) {
-                            bullet.GetComponent<PredeterminedTurn> ().turns [i] = new PredeterminedTurn.Turn ();
-                            bullet.GetComponent<PredeterminedTurn> ().turns [i].time = e.turns [i].time;
-                            bullet.GetComponent<PredeterminedTurn> ().turns [i].angleChange = e.turns [i].angleChange;
-                        }
-                    }
+                if (bullet.GetComponent<Acceleration> () != null) {
+                    bullet.GetComponent<Acceleration> ().acceleration = e.acceleration;
                 }
 
-                yield return new WaitForSeconds (1.0f / e.fireRate);
+                if (bullet.GetComponent<Homing> () != null) {
+                    bullet.GetComponent<Homing> ().fuel = e.fuel;
+                    bullet.GetComponent<Homing> ().unfocusRange = e.unfocusRange;
+                }
+
+                if (bullet.GetComponent<PredeterminedTurn> () != null) {
+                    bullet.GetComponent<PredeterminedTurn> ().repeating = e.loopsTurning;
+                    bullet.GetComponent<PredeterminedTurn> ().turns = new PredeterminedTurn.Turn[e.turns.Length];
+                    for (int i = 0; i < e.turns.Length; ++i) {
+                        bullet.GetComponent<PredeterminedTurn> ().turns [i] = new PredeterminedTurn.Turn ();
+                        bullet.GetComponent<PredeterminedTurn> ().turns [i].time = e.turns [i].time;
+                        bullet.GetComponent<PredeterminedTurn> ().turns [i].angleChange = e.turns [i].angleChange;
+                    }
+                }
             }
+
+            yield return new WaitForSeconds (1.0f / e.fireRate);
         }
     }
 }
