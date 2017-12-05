@@ -65,6 +65,7 @@ public class Emitter : MonoBehaviour {
                     bullet.GetComponent<PredeterminedTurn> ().repeating = e.loopsTurning;
                     bullet.GetComponent<PredeterminedTurn> ().turns = new PredeterminedTurn.Turn[e.turns.Length];
                     for (int i = 0; i < e.turns.Length; ++i) {
+                        bullet.GetComponent<PredeterminedTurn> ().turns [i] = new PredeterminedTurn.Turn();
                         bullet.GetComponent<PredeterminedTurn> ().turns [i].time = e.turns [i].time;
                         bullet.GetComponent<PredeterminedTurn> ().turns [i].angleChange = e.turns [i].angleChange;
                     }
