@@ -3,11 +3,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Assertions;
 
+//must include lifePanelGO in scene for this script to function properly
 public class PlayerLifeSystem : Weakness {
 
-    public GameObject lifePanelGO;
     private PlayerLifeMessenger lifeMessenger;
-
     public float invicibleDuration = 3f;
     [Tooltip("Invincibility frequency used for animation (measured in seconds)")]
     public float frequency = 0.2f;
@@ -17,8 +16,8 @@ public class PlayerLifeSystem : Weakness {
 
     void Start()
     {
-        Assert.IsNotNull(lifePanelGO, "Life Panel Game Object is null");
-        lifeMessenger = lifePanelGO.GetComponent<PlayerLifeMessenger>();
+        lifeMessenger = FindObjectOfType<PlayerLifeMessenger>();
+        Assert.IsNotNull(lifeMessenger, "PlayerLifeMessenger script reference is null");
         sr = GetComponent<SpriteRenderer>();
     }
 
@@ -34,7 +33,7 @@ public class PlayerLifeSystem : Weakness {
                     //send message to player to lose life using an expression lambda
                     //my guess here is that x represents the class that implemented the function LoseLife
                     //and y represents the BaseEventData which is null
-                    ExecuteEvents.Execute<ILifeMessenger>(lifePanelGO, null, (x, y) => x.LoseLife());
+                    ExecuteEvents.Execute<ILifeMessenger>(lifeMessenger.gameObject, null, (x, y) => x.LoseLife());
                     Destroy(collision.gameObject);
                     StartCoroutine(BeginInvincibilityAnimation());
                     break;

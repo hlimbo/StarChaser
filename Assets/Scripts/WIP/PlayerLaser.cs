@@ -7,10 +7,9 @@ using UnityEngine.UI;
 public class PlayerLaser : MonoBehaviour {
 
     public GameObject laser;
-    public GameObject shieldRef;
     public GameObject playerShip;
 
-    private EnergyAbsorber EnergyScript;
+    private EnergyAccumulator energyAccum;
     private CooldownTimer laserCD;
     private EventTrigger trigger;
     private Animator shipAnim;
@@ -24,8 +23,7 @@ public class PlayerLaser : MonoBehaviour {
         audioSrc = GetComponent<AudioSource>();
         laserBar = GetComponent<Slider>();
         shipAnim = playerShip.GetComponent<Animator>();
-
-        EnergyScript = shieldRef.GetComponent<EnergyAbsorber>();
+        energyAccum = playerShip.GetComponent<EnergyAccumulator>();
 
         //drag and then remove finger off screen to fire laser
         //EventTriggerHelper.AddEvent(trigger, EventTriggerType.EndDrag, Laser);
@@ -43,7 +41,7 @@ public class PlayerLaser : MonoBehaviour {
         else if(laserCD.isAbilityActive) //decrease charge over time
         {
             laserBar.value -= (laserCD.updateFrequency / laserCD.abilityTimer.duration) * Time.deltaTime;
-            EnergyScript.charge = 0;
+            energyAccum.charge = 0; //reset charge
         }
     }
 
@@ -52,7 +50,7 @@ public class PlayerLaser : MonoBehaviour {
     {
         if(!laser.activeInHierarchy && !laserCD.isOnCooldown)
         {
-            if (EnergyScript.charge == EnergyScript.maxCharge)
+            if (energyAccum.charge == energyAccum.maxCharge)
             {
                 //Debug.Log("laser");
                 shipAnim.SetBool("laserActive", true);
