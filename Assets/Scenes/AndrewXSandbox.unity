@@ -355,6 +355,7 @@ MonoBehaviour:
   - projectilePrefab: {fileID: 1571705040099150, guid: cca858567cb964290b3e4453ac1512f3,
       type: 2}
     offset: {x: 0, y: -1.5, z: 0}
+    initDelay: 5
     fireRate: 1.75
     angle: 180
     speed: 3

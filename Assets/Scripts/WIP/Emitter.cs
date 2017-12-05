@@ -8,6 +8,8 @@ public class Emitter : MonoBehaviour {
         public GameObject projectilePrefab;
         public Vector3 offset;
 
+        public float initDelay;
+
         [Tooltip("fireRate is projectiles fired per second from this emission point")]
         public float fireRate = 1.0f;
 
@@ -43,31 +45,41 @@ public class Emitter : MonoBehaviour {
         StartCoroutine(FireProjectile());
     }
 
+    void Update ()
+    {
+        foreach (EmitterOrigin e in emitters) {
+            if (e.initDelay > 0.0f)
+                e.initDelay -= Time.deltaTime;
+        }
+    }
+
     IEnumerator FireProjectile()
     {
         while(true)
         {
             foreach (EmitterOrigin e in emitters) {
-                GameObject bullet = Instantiate<GameObject> (e.projectilePrefab, transform.position + e.offset, Quaternion.identity);
-                bullet.GetComponent<Movement>().speed = e.speed;
-                bullet.transform.rotation = Quaternion.Euler (0.0f, 0.0f, e.angle);
+                if (e.initDelay <= 0.0f) {
+                    GameObject bullet = Instantiate<GameObject> (e.projectilePrefab, transform.position + e.offset, Quaternion.identity);
+                    bullet.GetComponent<Movement> ().speed = e.speed;
+                    bullet.transform.rotation = Quaternion.Euler (0.0f, 0.0f, e.angle);
 
-                if (bullet.GetComponent<Acceleration> () != null) {
-                    bullet.GetComponent<Acceleration> ().acceleration = e.acceleration;
-                }
+                    if (bullet.GetComponent<Acceleration> () != null) {
+                        bullet.GetComponent<Acceleration> ().acceleration = e.acceleration;
+                    }
 
-                if (bullet.GetComponent<Homing> () != null) {
-                    bullet.GetComponent<Homing> ().fuel = e.fuel;
-                    bullet.GetComponent<Homing> ().unfocusRange = e.unfocusRange;
-                }
+                    if (bullet.GetComponent<Homing> () != null) {
+                        bullet.GetComponent<Homing> ().fuel = e.fuel;
+                        bullet.GetComponent<Homing> ().unfocusRange = e.unfocusRange;
+                    }
 
-                if (bullet.GetComponent<PredeterminedTurn> () != null) {
-                    bullet.GetComponent<PredeterminedTurn> ().repeating = e.loopsTurning;
-                    bullet.GetComponent<PredeterminedTurn> ().turns = new PredeterminedTurn.Turn[e.turns.Length];
-                    for (int i = 0; i < e.turns.Length; ++i) {
-                        bullet.GetComponent<PredeterminedTurn> ().turns [i] = new PredeterminedTurn.Turn();
-                        bullet.GetComponent<PredeterminedTurn> ().turns [i].time = e.turns [i].time;
-                        bullet.GetComponent<PredeterminedTurn> ().turns [i].angleChange = e.turns [i].angleChange;
+                    if (bullet.GetComponent<PredeterminedTurn> () != null) {
+                        bullet.GetComponent<PredeterminedTurn> ().repeating = e.loopsTurning;
+                        bullet.GetComponent<PredeterminedTurn> ().turns = new PredeterminedTurn.Turn[e.turns.Length];
+                        for (int i = 0; i < e.turns.Length; ++i) {
+                            bullet.GetComponent<PredeterminedTurn> ().turns [i] = new PredeterminedTurn.Turn ();
+                            bullet.GetComponent<PredeterminedTurn> ().turns [i].time = e.turns [i].time;
+                            bullet.GetComponent<PredeterminedTurn> ().turns [i].angleChange = e.turns [i].angleChange;
+                        }
                     }
                 }
 
