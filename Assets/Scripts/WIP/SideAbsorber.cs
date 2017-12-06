@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.Assertions;
 
+//reminder (unity thing): when SideAbsorber inherits from EnergyAbsorber, 
+//SideAbsorber will invoke any MonoBehaviour methods defined in EnergyAbsorber
+//regardless of their access specifier (public, private, or protected)
 public class SideAbsorber : EnergyAbsorber
 {
     private GameObject laserGO;
