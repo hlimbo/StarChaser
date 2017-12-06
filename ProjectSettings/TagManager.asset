@@ -18,6 +18,7 @@ TagManager:
   - shield
   - Wakebar
   - AbilityBar
+  - SideAbsorber
   layers:
   - Default
   - TransparentFX

@@ -40,7 +40,9 @@ public class PlayerLaser : MonoBehaviour {
                 energyAccum.charge = 0; //reset charge
             }
             laser.SetActive(false);
-            shipAnim.SetBool("laserActive", false);
+
+            if (shipAnim != null) // turns to null when ship gameobject is destroyed
+                shipAnim.SetBool("laserActive", false);
         }
         else if(laserCD.isAbilityActive) //decrease charge over time
         {

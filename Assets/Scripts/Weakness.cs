@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Weakness : MonoBehaviour {
 
@@ -13,10 +12,14 @@ public class Weakness : MonoBehaviour {
             if (collision.tag.Equals(weaknessTag))
             {
                 //Debug.Log("weakness touched: " + collision.tag);
-                //Debug.Log(collision.gameObject.name);
-                Destroy(this.gameObject);
+                //Debug.Log(collision.gameObject.name)
 
-                //TODO: implement your own functionality once weakness by some object is triggered
+                //if none of the gameobject's script can handle IWeaknessMessenger, destroy gameobject by default
+                if (!ExecuteEvents.CanHandleEvent<IWeaknessMessenger>(gameObject))
+                    Destroy(gameObject);
+                else //implement your own functionality once weakness by some object is triggered
+                    ExecuteEvents.Execute<IWeaknessMessenger>(gameObject, null, (x, y) => x.OnWeaknessReceived(collision));
+
                 break;
             }
         }

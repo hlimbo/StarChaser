@@ -88,11 +88,11 @@ GameObject:
   - component: {fileID: 114349879181565164}
   m_Layer: 0
   m_Name: SideAbsorber_R
-  m_TagString: Shield
+  m_TagString: SideAbsorber
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1504585012635284
 GameObject:
   m_ObjectHideFlags: 1
@@ -140,9 +140,10 @@ GameObject:
   - component: {fileID: 95894919317649932}
   - component: {fileID: 212995197152516196}
   - component: {fileID: 114440561684665200}
+  - component: {fileID: 114100634463131416}
   m_Layer: 0
   m_Name: playerShip
-  m_TagString: player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,11 +160,11 @@ GameObject:
   - component: {fileID: 114761201398740850}
   m_Layer: 0
   m_Name: SideAbsorber_L
-  m_TagString: Shield
+  m_TagString: SideAbsorber
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1785284576128740
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +525,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114100634463131416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1645090474257272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceaa8271c2bb04e9db48f5363c9c7fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaknessTags:
+  - Bullet
+  - Enemy
 --- !u!114 &114153434193908908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -535,12 +550,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696b62be5edc344dbc292b21263fbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaknessTags:
-  - Enemy
-  - Bullet
   invicibleDuration: 3
   frequency: 0.15
   isInvincible: 0
+  sideAbsorberGO_L: {fileID: 0}
+  sideAbsorberGO_R: {fileID: 0}
 --- !u!114 &114341530426648832
 MonoBehaviour:
   m_ObjectHideFlags: 1

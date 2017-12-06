@@ -15,10 +15,9 @@ public class EnergyAbsorber : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        // Debug.Log("collision");
-        if (tagToAbsorb.Equals(collider.tag))
+        if (playerEnergy != null && tagToAbsorb.Equals(collider.tag))
         {
-            Debug.Log(collider.tag);
+           // Debug.Log(collider.tag);
             ExecuteEvents.Execute<IEnergyMessenger>(playerEnergy.gameObject, null, (x, y) => x.GainEnergy());
         }
     }

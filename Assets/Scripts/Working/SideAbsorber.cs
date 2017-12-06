@@ -8,7 +8,7 @@ public class SideAbsorber : EnergyAbsorber
 {
     private GameObject laserGO;
     private string untagged = "Untagged";
-    private string shield = "Shield";
+    private string sideAbsorber = "SideAbsorber";
 
     void Awake()
     {
@@ -18,6 +18,7 @@ public class SideAbsorber : EnergyAbsorber
 
     void Update()
     {
-        gameObject.tag = (laserGO.activeInHierarchy) ? untagged : shield;
+        //deactivate side absorbers when shield is active
+        gameObject.tag = (laserGO.activeInHierarchy) ? untagged : sideAbsorber;
     }
 }
