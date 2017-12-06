@@ -17,6 +17,7 @@ TagManager:
   - Bullet
   - shield
   - Wakebar
+  - AbilityBar
   layers:
   - Default
   - TransparentFX

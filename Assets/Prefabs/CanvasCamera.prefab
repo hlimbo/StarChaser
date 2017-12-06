@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224529901079304734}
   - component: {fileID: 223781596460142776}
   - component: {fileID: 114611670312637652}
-  - component: {fileID: 114025492349083590}
+  - component: {fileID: 114650913496824298}
   m_Layer: 5
   m_Name: CanvasCamera
   m_TagString: Untagged
@@ -40,6 +40,8 @@ GameObject:
   - component: {fileID: 222202545086190946}
   - component: {fileID: 114786878233993194}
   - component: {fileID: 114983976840687586}
+  - component: {fileID: 114624438177762234}
+  - component: {fileID: 114554805355749344}
   m_Layer: 5
   m_Name: background
   m_TagString: Untagged
@@ -47,22 +49,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114025492349083590
+--- !u!114 &114554805355749344
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1041687699451894}
+  m_GameObject: {fileID: 1769800478207158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
+  m_Delegates: []
+  delegates: []
 --- !u!114 &114611670312637652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,6 +83,36 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114624438177762234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1769800478207158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5631bf4c350d7cc44afc6dc278fade6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 0}
+  abilityBar: {fileID: 0}
+  fingerMoveId: -1
+--- !u!114 &114650913496824298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1041687699451894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &114786878233993194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,7 +168,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0

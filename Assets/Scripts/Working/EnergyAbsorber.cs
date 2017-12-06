@@ -18,6 +18,7 @@ public class EnergyAbsorber : MonoBehaviour
         // Debug.Log("collision");
         if (tagToAbsorb.Equals(collider.tag))
         {
+            Debug.Log(collider.tag);
             ExecuteEvents.Execute<IEnergyMessenger>(playerEnergy.gameObject, null, (x, y) => x.GainEnergy());
         }
     }

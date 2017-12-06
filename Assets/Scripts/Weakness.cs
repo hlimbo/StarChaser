@@ -15,6 +15,8 @@ public class Weakness : MonoBehaviour {
                 //Debug.Log("weakness touched: " + collision.tag);
                 //Debug.Log(collision.gameObject.name);
                 Destroy(this.gameObject);
+
+                //TODO: implement your own functionality once weakness by some object is triggered
                 break;
             }
         }

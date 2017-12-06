@@ -13,12 +13,14 @@ public class PlayerLifeSystem : Weakness {
     [SerializeField]
     private bool isInvincible = false;
     private SpriteRenderer sr;
+    private Weakness weakness;
 
     void Start()
     {
         lifeMessenger = FindObjectOfType<PlayerLifeMessenger>();
         Assert.IsNotNull(lifeMessenger, "PlayerLifeMessenger script reference is null");
         sr = GetComponent<SpriteRenderer>();
+        weakness = GetComponent<Weakness>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
