@@ -19,6 +19,8 @@ TagManager:
   - Wakebar
   - AbilityBar
   - SideAbsorber
+  - PausePanel
+  - PauseButton
   layers:
   - Default
   - TransparentFX

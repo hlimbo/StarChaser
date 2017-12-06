@@ -96,6 +96,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ship: {fileID: 0}
   abilityBar: {fileID: 0}
+  pausePanel: {fileID: 0}
+  pauseButton: {fileID: 0}
   fingerMoveId: -1
 --- !u!114 &114650913496824298
 MonoBehaviour:

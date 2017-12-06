@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4091802972966006}
   - component: {fileID: 50191002801261002}
-  - component: {fileID: 114466766834143576}
+  - component: {fileID: 114811975654989186}
   m_Layer: 0
   m_Name: ShipMovableArea
   m_TagString: Player
@@ -141,9 +141,10 @@ GameObject:
   - component: {fileID: 212995197152516196}
   - component: {fileID: 114440561684665200}
   - component: {fileID: 114100634463131416}
+  - component: {fileID: 114347370991533670}
   m_Layer: 0
   m_Name: playerShip
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -566,6 +567,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5b9ac37fa86a345aa21aa8ff137acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114347370991533670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1645090474257272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8023b133a72a57148b8dfd5c36e4070c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8.5
+  targetOffset: 1
 --- !u!114 &114349879181565164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -604,19 +618,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagToAbsorb: Bullet
---- !u!114 &114466766834143576
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1407422719133946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8023b133a72a57148b8dfd5c36e4070c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 8.5
-  targetOffset: 1
 --- !u!114 &114761201398740850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -629,6 +630,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagToAbsorb: Bullet
+--- !u!114 &114811975654989186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1407422719133946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8023b133a72a57148b8dfd5c36e4070c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8.5
+  targetOffset: 1
 --- !u!212 &212354392449653816
 SpriteRenderer:
   m_ObjectHideFlags: 1
