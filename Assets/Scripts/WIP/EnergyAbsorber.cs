@@ -5,15 +5,15 @@ using UnityEngine.Assertions;
 public class EnergyAbsorber : MonoBehaviour
 {
     public string tagToAbsorb;
-    private EnergyAccumulator playerEnergy;
+    protected EnergyAccumulator playerEnergy;
 
-    void Start()
+    protected void Start()
     {
         playerEnergy = FindObjectOfType<EnergyAccumulator>();
         Assert.IsNotNull(playerEnergy, "EnergyAccumulator script reference is null");
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    protected void OnTriggerEnter2D(Collider2D collider)
     {
         // Debug.Log("collision");
         if (tagToAbsorb.Equals(collider.tag))
@@ -21,7 +21,5 @@ public class EnergyAbsorber : MonoBehaviour
             ExecuteEvents.Execute<IEnergyMessenger>(playerEnergy.gameObject, null, (x, y) => x.GainEnergy());
         }
     }
-
-    
 
 }

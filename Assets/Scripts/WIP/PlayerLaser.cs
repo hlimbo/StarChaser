@@ -35,14 +35,18 @@ public class PlayerLaser : MonoBehaviour {
     {
         if(!laserCD.isAbilityActive)
         {
+            if (laserCD.isOnCooldown)
+            {
+                energyAccum.charge = 0; //reset charge
+            }
             laser.SetActive(false);
             shipAnim.SetBool("laserActive", false);
         }
         else if(laserCD.isAbilityActive) //decrease charge over time
         {
             laserBar.value -= (laserCD.updateFrequency / laserCD.abilityTimer.duration) * Time.deltaTime;
-            energyAccum.charge = 0; //reset charge
         }
+
     }
 
     //PointerDown ~ touch press to shoot laser

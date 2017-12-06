@@ -35,13 +35,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4698145608599514}
+  - component: {fileID: 114341530426648832}
   m_Layer: 0
   m_Name: LaserPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1190609519088794
 GameObject:
   m_ObjectHideFlags: 1
@@ -86,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4473638353553232}
   - component: {fileID: 61136216852937386}
-  - component: {fileID: 114827512686555596}
+  - component: {fileID: 114349879181565164}
   m_Layer: 0
   m_Name: SideAbsorber_R
   m_TagString: Shield
@@ -157,7 +158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4055106281234730}
   - component: {fileID: 61264641042355984}
-  - component: {fileID: 114491951560984138}
+  - component: {fileID: 114761201398740850}
   m_Layer: 0
   m_Name: SideAbsorber_L
   m_TagString: Shield
@@ -582,6 +583,29 @@ MonoBehaviour:
   invicibleDuration: 3
   frequency: 0.15
   isInvincible: 0
+--- !u!114 &114341530426648832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119304941269548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5b9ac37fa86a345aa21aa8ff137acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114349879181565164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1417971733348354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b495ebe639efcc4b9bd68a4cb4ec9d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToAbsorb: Enemy
 --- !u!114 &114440561684665200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -608,18 +632,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagToAbsorb: Enemy
---- !u!114 &114491951560984138
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1738039712815766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54f2b2bd70e8e4ab7add00590ef1bf80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagToAbsorb: Enemy
 --- !u!114 &114626489809095206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -633,15 +645,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Delegates: []
   delegates: []
---- !u!114 &114827512686555596
+--- !u!114 &114761201398740850
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1417971733348354}
+  m_GameObject: {fileID: 1738039712815766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54f2b2bd70e8e4ab7add00590ef1bf80, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b495ebe639efcc4b9bd68a4cb4ec9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tagToAbsorb: Enemy

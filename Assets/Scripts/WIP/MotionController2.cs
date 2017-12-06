@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 
 public class MotionController2 : MonoBehaviour {
 
-    private Rigidbody2D rb;
     private EventTrigger trigger;
     private Movement camMovement;
     private BoxCollider2D moveableArea;
@@ -21,7 +20,6 @@ public class MotionController2 : MonoBehaviour {
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         camMovement = Camera.main.GetComponent<Movement>();
         moveableArea = GetComponent<BoxCollider2D>();
         moveableArea.size = new Vector2(Camera.main.orthographicSize * Camera.main.aspect, Camera.main.orthographicSize);//new Vector2(Camera.main.orthographicSize * 2f * Camera.main.aspect, Camera.main.orthographicSize * 2f);

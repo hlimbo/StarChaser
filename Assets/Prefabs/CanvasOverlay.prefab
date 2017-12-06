@@ -786,7 +786,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  shieldRef: {fileID: 0}
   playerShip: {fileID: 0}
 --- !u!114 &114415816590437068
 MonoBehaviour:
@@ -914,7 +913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cdTimer:
-    duration: 0.5
+    duration: 2
     startTime: 0
     elapsedTime: 0
     isTicking: 0

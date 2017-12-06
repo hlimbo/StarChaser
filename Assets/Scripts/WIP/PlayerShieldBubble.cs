@@ -10,9 +10,7 @@ public class PlayerShieldBubble : MonoBehaviour{
     private CooldownTimer shieldCD;
     private EventTrigger trigger;
     private AudioSource audioSrc;
-
     private Image bg_ready;
-    private Image bg_cooldown;
 
     public AudioClip shieldOnFX;
     public AudioClip shieldOffFX;
@@ -24,8 +22,6 @@ public class PlayerShieldBubble : MonoBehaviour{
         shieldCD = GetComponent<CooldownTimer>();
         audioSrc = GetComponent<AudioSource>();
         shipHitbox = playerShip.GetComponent<CapsuleCollider2D>();
-
-        bg_cooldown = transform.GetChild(0).GetComponent<Image>();
         bg_ready = transform.GetChild(1).GetComponent<Image>();
     }
 

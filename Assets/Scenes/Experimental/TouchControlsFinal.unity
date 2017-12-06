@@ -151,6 +151,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114115688275205658, guid: 956b0a6665f07704c8cfea0cd92ee5ac,
+        type: 2}
+      propertyPath: abilityBar
+      value: 
+      objectReference: {fileID: 1658117505}
     - target: {fileID: 114440561684665200, guid: 956b0a6665f07704c8cfea0cd92ee5ac,
         type: 2}
       propertyPath: laserBar
@@ -160,11 +165,6 @@ Prefab:
       propertyPath: m_Name
       value: Ship
       objectReference: {fileID: 0}
-    - target: {fileID: 114115688275205658, guid: 956b0a6665f07704c8cfea0cd92ee5ac,
-        type: 2}
-      propertyPath: abilityBar
-      value: 
-      objectReference: {fileID: 1658117505}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 956b0a6665f07704c8cfea0cd92ee5ac, type: 2}
   m_IsPrefabParent: 0
@@ -664,20 +664,50 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224089736346716144, guid: a497f89451eef9740abdc76c95122f50,
+    - target: {fileID: 224872975099579416, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 68.02713
+      propertyPath: m_LocalPosition.x
+      value: 238.40382
       objectReference: {fileID: 0}
-    - target: {fileID: 224673327338367178, guid: a497f89451eef9740abdc76c95122f50,
+    - target: {fileID: 224746317731678436, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 68.02713
+      propertyPath: m_LocalPosition.x
+      value: -238.40382
       objectReference: {fileID: 0}
-    - target: {fileID: 224849873193430816, guid: a497f89451eef9740abdc76c95122f50,
+    - target: {fileID: 224425592034810194, guid: a497f89451eef9740abdc76c95122f50,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -551.19336
+      objectReference: {fileID: 0}
+    - target: {fileID: 224425592034810194, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 68.02711
+      value: 940.50476
+      objectReference: {fileID: 0}
+    - target: {fileID: 224694788883799294, guid: a497f89451eef9740abdc76c95122f50,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 312.8397
+      objectReference: {fileID: 0}
+    - target: {fileID: 224694788883799294, guid: a497f89451eef9740abdc76c95122f50,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 940.50476
+      objectReference: {fileID: 0}
+    - target: {fileID: 114415151826917086, guid: a497f89451eef9740abdc76c95122f50,
+        type: 2}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 1781182444}
+    - target: {fileID: 114415151826917086, guid: a497f89451eef9740abdc76c95122f50,
+        type: 2}
+      propertyPath: playerShip
+      value: 
+      objectReference: {fileID: 1361481734}
+    - target: {fileID: 224866266518217752, guid: a497f89451eef9740abdc76c95122f50,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -414.65475
       objectReference: {fileID: 0}
     - target: {fileID: 114233466455912230, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
@@ -689,55 +719,20 @@ Prefab:
       propertyPath: playerShip
       value: 
       objectReference: {fileID: 1361481734}
-    - target: {fileID: 224866266518217752, guid: a497f89451eef9740abdc76c95122f50,
+    - target: {fileID: 224849873193430816, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -418.06235
+      value: 67.4835
       objectReference: {fileID: 0}
-    - target: {fileID: 114415151826917086, guid: a497f89451eef9740abdc76c95122f50,
-        type: 2}
-      propertyPath: laser
-      value: 
-      objectReference: {fileID: 1781182444}
-    - target: {fileID: 114415151826917086, guid: a497f89451eef9740abdc76c95122f50,
-        type: 2}
-      propertyPath: shieldRef
-      value: 
-      objectReference: {fileID: 1320522155}
-    - target: {fileID: 114415151826917086, guid: a497f89451eef9740abdc76c95122f50,
-        type: 2}
-      propertyPath: playerShip
-      value: 
-      objectReference: {fileID: 1361481734}
-    - target: {fileID: 224694788883799294, guid: a497f89451eef9740abdc76c95122f50,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 311.7104
-      objectReference: {fileID: 0}
-    - target: {fileID: 224694788883799294, guid: a497f89451eef9740abdc76c95122f50,
+    - target: {fileID: 224673327338367178, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 943.91235
+      value: 67.48352
       objectReference: {fileID: 0}
-    - target: {fileID: 224425592034810194, guid: a497f89451eef9740abdc76c95122f50,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -549.2035
-      objectReference: {fileID: 0}
-    - target: {fileID: 224425592034810194, guid: a497f89451eef9740abdc76c95122f50,
+    - target: {fileID: 224089736346716144, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 943.91235
-      objectReference: {fileID: 0}
-    - target: {fileID: 224746317731678436, guid: a497f89451eef9740abdc76c95122f50,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -237.54326
-      objectReference: {fileID: 0}
-    - target: {fileID: 224872975099579416, guid: a497f89451eef9740abdc76c95122f50,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 237.54326
+      value: 67.48352
       objectReference: {fileID: 0}
     - target: {fileID: 114176333940064412, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
@@ -747,7 +742,7 @@ Prefab:
     - target: {fileID: 224389086399241782, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 549.2538
+      value: 551.24365
       objectReference: {fileID: 0}
     - target: {fileID: 224389086399241782, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
