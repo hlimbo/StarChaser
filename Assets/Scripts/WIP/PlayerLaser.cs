@@ -67,4 +67,20 @@ public class PlayerLaser : MonoBehaviour {
 
         }
     }
+
+    public void Laser()
+    {
+        if (!laser.activeInHierarchy && !laserCD.isOnCooldown)
+        {
+            if (energyAccum.charge == energyAccum.maxCharge)
+            {
+                //Debug.Log("laser");
+                shipAnim.SetBool("laserActive", true);
+                laserCD.enabled = true;
+                laser.SetActive(true);
+                audioSrc.Play();
+            }
+
+        }
+    }
 }
