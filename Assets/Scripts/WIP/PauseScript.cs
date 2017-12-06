@@ -49,6 +49,10 @@ public class PauseScript : MonoBehaviour {
             countdown.enabled = false;
             Time.timeScale = 0f;
         }
+        else
+        {
+            Time.timeScale = 1f;
+        }
     }
 
     void OnDisable()
