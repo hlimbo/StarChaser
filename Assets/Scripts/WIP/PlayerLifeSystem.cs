@@ -6,6 +6,8 @@ using UnityEngine.Assertions;
 //must include lifePanelGO in scene for this script to function properly
 public class PlayerLifeSystem : MonoBehaviour, IWeaknessMessenger {
 
+    public GameObject gameOverPanel;
+
     private PlayerLifeMessenger lifeMessenger;
     public float invicibleDuration = 3f;
     [Tooltip("Invincibility frequency used for animation (measured in seconds)")]
@@ -19,6 +21,24 @@ public class PlayerLifeSystem : MonoBehaviour, IWeaknessMessenger {
     public GameObject sideAbsorberGO_R;
     private BoxCollider2D sideAbsorber_L;
     private BoxCollider2D sideAbsorber_R;
+
+
+    //helper function to check if player ship is dead
+    //e.g. Andrew you can use this C# property as a flag to stop the Homing script from 
+    //trying to follow a null referenced player.
+    public bool IsShipDead
+    {
+        get
+        {
+            Assert.IsNotNull(transform.parent.gameObject);//shipPivot gameObject
+            return !transform.parent.gameObject.activeInHierarchy;
+        }
+    }
+
+    void Awake()
+    {
+        gameOverPanel = GameObject.Find("GameOverPanel");    
+    }
 
     void Start()
     {
@@ -42,8 +62,12 @@ public class PlayerLifeSystem : MonoBehaviour, IWeaknessMessenger {
             //and y represents the BaseEventData which is null
             ExecuteEvents.Execute<ILifeMessenger>(lifeMessenger.gameObject, null, (x, y) => x.LoseLife());
             //kill player
-            if (lifeMessenger.lives <= 0)
-                Destroy(gameObject);
+            if (!IsShipDead && lifeMessenger.lives <= 0)
+            {
+                //Destroy(gameObject);
+                transform.parent.gameObject.SetActive(false);
+                gameOverPanel.SetActive(true);
+            }
             else
                 StartCoroutine(BeginInvincibilityAnimation());
         }

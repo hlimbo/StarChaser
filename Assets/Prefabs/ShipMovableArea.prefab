@@ -141,7 +141,6 @@ GameObject:
   - component: {fileID: 212995197152516196}
   - component: {fileID: 114440561684665200}
   - component: {fileID: 114100634463131416}
-  - component: {fileID: 114347370991533670}
   m_Layer: 0
   m_Name: playerShip
   m_TagString: Untagged
@@ -232,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1407422719133946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.639, y: -1.877, z: 0}
+  m_LocalPosition: {x: -0.12, y: -3.29, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 4339558886149734}
@@ -552,6 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696b62be5edc344dbc292b21263fbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 0}
   invicibleDuration: 3
   frequency: 0.15
   isInvincible: 0
@@ -568,19 +568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5b9ac37fa86a345aa21aa8ff137acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114347370991533670
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1645090474257272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8023b133a72a57148b8dfd5c36e4070c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 8.5
-  targetOffset: 1
 --- !u!114 &114349879181565164
 MonoBehaviour:
   m_ObjectHideFlags: 1

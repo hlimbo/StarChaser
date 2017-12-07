@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 114983976840687586}
   - component: {fileID: 114624438177762234}
   - component: {fileID: 114554805355749344}
+  - component: {fileID: 114418555464854202}
   m_Layer: 5
   m_Name: background
   m_TagString: Untagged
@@ -50,6 +51,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114418555464854202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1769800478207158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a745e1ffb0d8e2469dcc440778e6730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  untouchableAreas:
+  - {fileID: 224389086399241782, guid: a497f89451eef9740abdc76c95122f50, type: 2}
+  - {fileID: 224074967798006110, guid: a497f89451eef9740abdc76c95122f50, type: 2}
+  - {fileID: 224839747482145618, guid: a497f89451eef9740abdc76c95122f50, type: 2}
+  - {fileID: 224976501197372728, guid: a497f89451eef9740abdc76c95122f50, type: 2}
+  abilityBar: {fileID: 0}
 --- !u!114 &114554805355749344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,10 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5631bf4c350d7cc44afc6dc278fade6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 0}
-  abilityBar: {fileID: 0}
-  pausePanel: {fileID: 0}
-  pauseButton: {fileID: 0}
+  ship: {fileID: 1407422719133946, guid: 956b0a6665f07704c8cfea0cd92ee5ac, type: 2}
+  pausePanel: {fileID: 1327526962355260, guid: a497f89451eef9740abdc76c95122f50, type: 2}
   fingerMoveId: -1
 --- !u!114 &114650913496824298
 MonoBehaviour:
@@ -180,7 +196,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 20811874215501262, guid: 9c7a972daaba38f40b2016fd127e188a, type: 2}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
   m_ReceivesEvents: 1

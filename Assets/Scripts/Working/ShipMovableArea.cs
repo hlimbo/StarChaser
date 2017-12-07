@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
+using UnityEngine.Assertions;
 
 //Area the ship can move around is defined to be the entire canvas background image (e.g. entire screen size of mobile device)
 //Note: pointerdown event is detected via raycast on the contents of the CameraCanvas game object through a Graphics Raycaster component
@@ -10,15 +10,11 @@ public class ShipMovableArea : MonoBehaviour {
 
     [Tooltip("The player ship")]
     public GameObject ship;
-    [Tooltip("Area in which player vessel cannot move towards or inside of")]
-    public GameObject abilityBar;
     public GameObject pausePanel;
-    public GameObject pauseButton;
 
-    private RectTransform abilityBarRect;
-    private RectTransform pauseButtonRect;
     private EventTrigger trigger;
     private Movement camMovement;
+    private Untouchable untouchable;
     [SerializeField]
     private int fingerMoveId = -1;
 
@@ -26,28 +22,18 @@ public class ShipMovableArea : MonoBehaviour {
     {
         ship = GameObject.FindWithTag("Player");
         pausePanel = GameObject.Find("PausePanel");
-        abilityBar = GameObject.Find("AbilityBar");
-        pauseButton = GameObject.Find("PauseButton");
     }
 
     // Use this for initialization
     void Start ()
     {
         trigger = GetComponent<EventTrigger>();
-        abilityBarRect = abilityBar.GetComponent<RectTransform>();
-        pauseButtonRect = pauseButton.GetComponent<RectTransform>();
+        untouchable = GetComponent<Untouchable>();
         camMovement = Camera.main.GetComponent<Movement>();
 
-        EventTriggerHelper.AddEvent(trigger, EventTriggerType.PointerDown, (data) => { fingerMoveId = (IsTouchingUI(data.position)) ? -1 : data.pointerId; });
+        EventTriggerHelper.AddEvent(trigger, EventTriggerType.PointerDown, (data) => { fingerMoveId = untouchable.IsTouchingUI(data.position) ? -1 : data.pointerId; });
         EventTriggerHelper.AddEvent(trigger, EventTriggerType.PointerUp, (data) => { fingerMoveId = -1; });
-      
-    }
 
-    //stops movement when UI is clicked
-    private bool IsTouchingUI(Vector2 touchPos)
-    {
-        return RectTransformUtility.RectangleContainsScreenPoint(abilityBarRect, touchPos)
-            || RectTransformUtility.RectangleContainsScreenPoint(pauseButtonRect, touchPos);
     }
 
     private void MoveShip(Vector2 cursorPos)
@@ -95,8 +81,7 @@ public class ShipMovableArea : MonoBehaviour {
                 //0 = left mouse press
                 //1 = right mouse press
                 //2 = middle mouse press
-
-                if (Input.GetMouseButton(0) && !IsTouchingUI(Input.mousePosition))
+                if (Input.GetMouseButton(0) && !untouchable.IsTouchingUI(Input.mousePosition))
                 {
                     MoveShip(Input.mousePosition);
                 }
