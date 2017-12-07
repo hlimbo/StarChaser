@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 60683373505455302}
   - component: {fileID: 96032186182148130}
   - component: {fileID: 114165955969211642}
+  - component: {fileID: 114509887669013160}
   m_Layer: 0
   m_Name: HomingMissilePrefab
   m_TagString: Bullet
@@ -165,7 +166,7 @@ TrailRenderer:
     textureMode: 0
     generateLightingData: 0
   m_MinVertexDistance: 0.1
-  m_Autodestruct: 0
+  m_Autodestruct: 1
 --- !u!114 &114165955969211642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,6 +179,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0.5
+--- !u!114 &114509887669013160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497699100856932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d329adfc3ac7421fa134c18d2910800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114616493996708722
 MonoBehaviour:
   m_ObjectHideFlags: 1

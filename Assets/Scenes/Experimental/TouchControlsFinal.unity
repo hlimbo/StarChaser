@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 189824143}
   - component: {fileID: 189824144}
   - component: {fileID: 189824145}
+  - component: {fileID: 189824146}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -447,6 +448,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.57, y: 3.07}
   m_EdgeRadius: 0
+--- !u!114 &189824146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 189824140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870f53fd2f65f89418d6a37d3cadd37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emitters:
+  - projectilePrefab: {fileID: 1571705040099150, guid: cca858567cb964290b3e4453ac1512f3,
+      type: 2}
+    offset: {x: 0, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 0
+    angle: 180
+    speed: 1
+    acceleration: 0
+    fuel: 0
+    unfocusRange: 0
+    loopsTurning: 1
+    turns:
+    - time: 0.25
+      angleChange: 45
+    - time: 0.25
+      angleChange: -45
+    - time: 0.25
+      angleChange: -45
+    - time: 0.25
+      angleChange: 45
 --- !u!1 &262546072
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,15 +521,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitters:
-  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
       type: 2}
-    offset: {x: 0, y: -1, z: 0}
+    offset: {x: 0, y: -0.5, z: 0}
     initDelay: 0
-    fireRate: 2
+    fireRate: 1
     angle: 180
-    speed: 3
+    speed: 1.5
     acceleration: 0
-    fuel: 2
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+      type: 2}
+    offset: {x: 0.25, y: -0.5, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 180
+    speed: 1.5
+    acceleration: 0
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+      type: 2}
+    offset: {x: -0.25, y: -0.5, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 180
+    speed: 1.5
+    acceleration: 0
+    fuel: 1.5
     unfocusRange: 1.125
     loopsTurning: 0
     turns: []
@@ -578,12 +635,12 @@ Prefab:
     - target: {fileID: 224192085511770250, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 178
+      value: 242.5
       objectReference: {fileID: 0}
     - target: {fileID: 224192085511770250, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 316.5
+      value: 431
       objectReference: {fileID: 0}
     - target: {fileID: 224192085511770250, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
@@ -708,7 +765,7 @@ Prefab:
     - target: {fileID: 224364903860464256, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 345.5
       objectReference: {fileID: 0}
     - target: {fileID: 224999402384590664, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
@@ -913,21 +970,45 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1553162605}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 870f53fd2f65f89418d6a37d3cadd37d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   emitters:
-  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
       type: 2}
-    offset: {x: 0, y: -1, z: 0}
+    offset: {x: 0, y: -0.5, z: 0}
     initDelay: 0
-    fireRate: 2
+    fireRate: 1
     angle: 180
-    speed: 3
+    speed: 1.5
     acceleration: 0
-    fuel: 2
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+      type: 2}
+    offset: {x: 0.25, y: -0.5, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 180
+    speed: 1.5
+    acceleration: 0
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+      type: 2}
+    offset: {x: -0.25, y: -0.5, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 180
+    speed: 1.5
+    acceleration: 0
+    fuel: 1.5
     unfocusRange: 1.125
     loopsTurning: 0
     turns: []

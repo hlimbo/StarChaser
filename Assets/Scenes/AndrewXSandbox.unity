@@ -352,9 +352,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitters:
-  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+  - projectilePrefab: {fileID: 1571705040099150, guid: cca858567cb964290b3e4453ac1512f3,
       type: 2}
-    offset: {x: 0, y: -1.5, z: 0}
+    offset: {x: -0.5, y: -1.5, z: 0}
     initDelay: 0
     fireRate: 1
     angle: 180
@@ -372,13 +372,13 @@ MonoBehaviour:
       angleChange: -45
     - time: 0.25
       angleChange: 45
-  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
       type: 2}
     offset: {x: -1.5, y: 0, z: 0}
     initDelay: 0
     fireRate: 1
     angle: 135
-    speed: 3
+    speed: 1
     acceleration: 1
     fuel: 1.5
     unfocusRange: 1.125
@@ -392,12 +392,112 @@ MonoBehaviour:
       angleChange: -45
     - time: 0.25
       angleChange: 45
-  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
       type: 2}
     offset: {x: 1.5, y: 0, z: 0}
     initDelay: 0
     fireRate: 1
     angle: 225
+    speed: 1
+    acceleration: 1
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 1
+    turns:
+    - time: 0.25
+      angleChange: 45
+    - time: 0.25
+      angleChange: -45
+    - time: 0.25
+      angleChange: -45
+    - time: 0.25
+      angleChange: 45
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+      type: 2}
+    offset: {x: 1.75, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 225
+    speed: 1
+    acceleration: 1
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 1
+    turns:
+    - time: 0.25
+      angleChange: 45
+    - time: 0.25
+      angleChange: -45
+    - time: 0.25
+      angleChange: -45
+    - time: 0.25
+      angleChange: 45
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+      type: 2}
+    offset: {x: 1.25, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 225
+    speed: 1
+    acceleration: 1
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 1
+    turns:
+    - time: 0.25
+      angleChange: 45
+    - time: 0.25
+      angleChange: -45
+    - time: 0.25
+      angleChange: -45
+    - time: 0.25
+      angleChange: 45
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+      type: 2}
+    offset: {x: -1.25, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 225
+    speed: 1
+    acceleration: 1
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 1
+    turns:
+    - time: 0.25
+      angleChange: 45
+    - time: 0.25
+      angleChange: -45
+    - time: 0.25
+      angleChange: -45
+    - time: 0.25
+      angleChange: 45
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+      type: 2}
+    offset: {x: -1.75, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 225
+    speed: 1
+    acceleration: 1
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 1
+    turns:
+    - time: 0.25
+      angleChange: 45
+    - time: 0.25
+      angleChange: -45
+    - time: 0.25
+      angleChange: -45
+    - time: 0.25
+      angleChange: 45
+  - projectilePrefab: {fileID: 1571705040099150, guid: cca858567cb964290b3e4453ac1512f3,
+      type: 2}
+    offset: {x: 0.5, y: -1.5, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 180
     speed: 3
     acceleration: 1
     fuel: 1.5

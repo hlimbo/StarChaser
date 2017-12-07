@@ -59,7 +59,7 @@ public class Emitter : MonoBehaviour {
     {
         while(true)
         {
-            if (e.initDelay <= 0.0f) {
+            if (e.initDelay <= 0.0f && e.fireRate > 0.0f) {
                 GameObject bullet = Instantiate<GameObject> (e.projectilePrefab, transform.position + e.offset, Quaternion.identity);
                 bullet.GetComponent<Movement> ().speed = e.speed;
                 bullet.transform.rotation = Quaternion.Euler (0.0f, 0.0f, e.angle);
