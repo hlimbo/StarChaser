@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 168797506}
   - component: {fileID: 168797505}
   - component: {fileID: 168797507}
+  - component: {fileID: 168797508}
   m_Layer: 0
   m_Name: boss_hand_r
   m_TagString: Untagged
@@ -241,8 +242,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 1.4090755, y: 2.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 262546074}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
@@ -321,6 +321,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaknessTags:
   - Laser
+--- !u!114 &168797508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 168797501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870f53fd2f65f89418d6a37d3cadd37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emitters:
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+      type: 2}
+    offset: {x: 0, y: -0.5, z: 0}
+    initDelay: 0
+    fireRate: 0.8
+    angle: 180
+    speed: 1.5
+    acceleration: 0
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+      type: 2}
+    offset: {x: 0.25, y: -0.5, z: 0}
+    initDelay: 0
+    fireRate: 0.8
+    angle: 180
+    speed: 1.5
+    acceleration: 0
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+      type: 2}
+    offset: {x: -0.25, y: -0.5, z: 0}
+    initDelay: 0
+    fireRate: 0.8
+    angle: 180
+    speed: 1.5
+    acceleration: 0
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 0
+    turns: []
 --- !u!1 &189824140
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,83 +533,6 @@ MonoBehaviour:
       angleChange: -45
     - time: 0.25
       angleChange: 45
---- !u!1 &262546072
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 262546074}
-  - component: {fileID: 262546075}
-  m_Layer: 0
-  m_Name: emitter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &262546074
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 262546072}
-  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
-  m_Children: []
-  m_Father: {fileID: 168797503}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &262546075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 262546072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 870f53fd2f65f89418d6a37d3cadd37d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  emitters:
-  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
-      type: 2}
-    offset: {x: 0, y: -0.5, z: 0}
-    initDelay: 0
-    fireRate: 0.8
-    angle: 180
-    speed: 1.5
-    acceleration: 0
-    fuel: 1.5
-    unfocusRange: 1.125
-    loopsTurning: 0
-    turns: []
-  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
-      type: 2}
-    offset: {x: 0.25, y: -0.5, z: 0}
-    initDelay: 0
-    fireRate: 0.8
-    angle: 180
-    speed: 1.5
-    acceleration: 0
-    fuel: 1.5
-    unfocusRange: 1.125
-    loopsTurning: 0
-    turns: []
-  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
-      type: 2}
-    offset: {x: -0.25, y: -0.5, z: 0}
-    initDelay: 0
-    fireRate: 0.8
-    angle: 180
-    speed: 1.5
-    acceleration: 0
-    fuel: 1.5
-    unfocusRange: 1.125
-    loopsTurning: 0
-    turns: []
 --- !u!1 &364972292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,83 +973,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1645090474257272, guid: 956b0a6665f07704c8cfea0cd92ee5ac,
     type: 2}
   m_PrefabInternal: {fileID: 125300381}
---- !u!1 &1553162605
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1553162606}
-  - component: {fileID: 1553162607}
-  m_Layer: 0
-  m_Name: emitter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1553162606
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1553162605}
-  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2033030714}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1553162607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1553162605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 870f53fd2f65f89418d6a37d3cadd37d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  emitters:
-  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
-      type: 2}
-    offset: {x: 0, y: -0.5, z: 0}
-    initDelay: 0
-    fireRate: 0.8
-    angle: 180
-    speed: 1.5
-    acceleration: 0
-    fuel: 1.5
-    unfocusRange: 1.125
-    loopsTurning: 0
-    turns: []
-  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
-      type: 2}
-    offset: {x: 0.25, y: -0.5, z: 0}
-    initDelay: 0
-    fireRate: 0.8
-    angle: 180
-    speed: 1.5
-    acceleration: 0
-    fuel: 1.5
-    unfocusRange: 1.125
-    loopsTurning: 0
-    turns: []
-  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
-      type: 2}
-    offset: {x: -0.25, y: -0.5, z: 0}
-    initDelay: 0
-    fireRate: 0.8
-    angle: 180
-    speed: 1.5
-    acceleration: 0
-    fuel: 1.5
-    unfocusRange: 1.125
-    loopsTurning: 0
-    turns: []
 --- !u!1 &1712894810 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1446474803297102, guid: a497f89451eef9740abdc76c95122f50,
@@ -1107,6 +1001,7 @@ GameObject:
   - component: {fileID: 2033030711}
   - component: {fileID: 2033030710}
   - component: {fileID: 2033030709}
+  - component: {fileID: 2033030715}
   m_Layer: 0
   m_Name: boss_hand_l
   m_TagString: Untagged
@@ -1242,11 +1137,58 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
   m_LocalPosition: {x: -1.66, y: 2.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1553162606}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &2033030715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2033030708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870f53fd2f65f89418d6a37d3cadd37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emitters:
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+      type: 2}
+    offset: {x: 0, y: -0.5, z: 0}
+    initDelay: 0
+    fireRate: 0.8
+    angle: 180
+    speed: 1.5
+    acceleration: 0
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+      type: 2}
+    offset: {x: 0.25, y: -0.5, z: 0}
+    initDelay: 0
+    fireRate: 0.8
+    angle: 180
+    speed: 1.5
+    acceleration: 0
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1497699100856932, guid: 1e0127570033d4e4595011bd16150e65,
+      type: 2}
+    offset: {x: -0.25, y: -0.5, z: 0}
+    initDelay: 0
+    fireRate: 0.8
+    angle: 180
+    speed: 1.5
+    acceleration: 0
+    fuel: 1.5
+    unfocusRange: 1.125
+    loopsTurning: 0
+    turns: []
 --- !u!224 &2061246526 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224839747482145618, guid: a497f89451eef9740abdc76c95122f50,
