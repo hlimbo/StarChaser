@@ -15,6 +15,12 @@ public class PlayerShieldBubble : MonoBehaviour{
     public AudioClip shieldOnFX;
     public AudioClip shieldOffFX;
 
+    void Awake()
+    {
+        shield = GameObject.Find("Shield");
+        playerShip = GameObject.Find("playerShip");
+    }
+
     void Start()
     {
         trigger = GetComponent<EventTrigger>();

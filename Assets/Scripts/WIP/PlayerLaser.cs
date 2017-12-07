@@ -16,6 +16,12 @@ public class PlayerLaser : MonoBehaviour {
     private AudioSource audioSrc;
     private Slider laserBar;
 
+    void Awake()
+    {
+        laser = GameObject.Find("LaserPivot");
+        playerShip = GameObject.Find("playerShip");
+    }
+
     void Start ()
     {
         trigger = GetComponent<EventTrigger>();

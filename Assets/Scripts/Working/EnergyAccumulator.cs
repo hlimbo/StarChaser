@@ -12,6 +12,12 @@ public class EnergyAccumulator : MonoBehaviour, IEnergyMessenger
     private float currentChargePercent;
     private float targetChargePercent;
 
+    void Awake()
+    {
+        GameObject go = GameObject.Find("LaserBar");
+        laserBar = go.GetComponent<Slider>();
+    }
+
     void Start()
     {
         charge = 0;
