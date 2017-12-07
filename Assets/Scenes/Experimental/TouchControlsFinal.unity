@@ -77,17 +77,15 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFilterTypeDirect: 0
-    m_PVRFilterTypeIndirect: 0
-    m_PVRFilterTypeAO: 0
+    m_PVRFiltering: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-    m_PVRFilteringAtrousPositionSigmaIndirect: 2
-    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -109,8 +107,6 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-    debug:
-      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1001 &125300381
 Prefab:
@@ -192,7 +188,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -208,7 +203,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -345,7 +339,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -361,7 +354,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -464,7 +456,7 @@ MonoBehaviour:
       type: 2}
     offset: {x: 0, y: 0, z: 0}
     initDelay: 0
-    fireRate: 0
+    fireRate: 0.5
     angle: 180
     speed: 1
     acceleration: 0
@@ -525,7 +517,7 @@ MonoBehaviour:
       type: 2}
     offset: {x: 0, y: -0.5, z: 0}
     initDelay: 0
-    fireRate: 1
+    fireRate: 0.8
     angle: 180
     speed: 1.5
     acceleration: 0
@@ -537,7 +529,7 @@ MonoBehaviour:
       type: 2}
     offset: {x: 0.25, y: -0.5, z: 0}
     initDelay: 0
-    fireRate: 1
+    fireRate: 0.8
     angle: 180
     speed: 1.5
     acceleration: 0
@@ -549,7 +541,7 @@ MonoBehaviour:
       type: 2}
     offset: {x: -0.25, y: -0.5, z: 0}
     initDelay: 0
-    fireRate: 1
+    fireRate: 0.8
     angle: 180
     speed: 1.5
     acceleration: 0
@@ -765,7 +757,7 @@ Prefab:
     - target: {fileID: 224364903860464256, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 345.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224999402384590664, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
@@ -816,6 +808,26 @@ Prefab:
         type: 2}
       propertyPath: m_LocalPosition.y
       value: -59.100006
+      objectReference: {fileID: 0}
+    - target: {fileID: 224364903860464256, guid: a497f89451eef9740abdc76c95122f50,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224364903860464256, guid: a497f89451eef9740abdc76c95122f50,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224364903860464256, guid: a497f89451eef9740abdc76c95122f50,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224364903860464256, guid: a497f89451eef9740abdc76c95122f50,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a497f89451eef9740abdc76c95122f50, type: 2}
@@ -970,7 +982,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1553162605}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 870f53fd2f65f89418d6a37d3cadd37d, type: 3}
   m_Name: 
@@ -980,7 +992,7 @@ MonoBehaviour:
       type: 2}
     offset: {x: 0, y: -0.5, z: 0}
     initDelay: 0
-    fireRate: 1
+    fireRate: 0.8
     angle: 180
     speed: 1.5
     acceleration: 0
@@ -992,7 +1004,7 @@ MonoBehaviour:
       type: 2}
     offset: {x: 0.25, y: -0.5, z: 0}
     initDelay: 0
-    fireRate: 1
+    fireRate: 0.8
     angle: 180
     speed: 1.5
     acceleration: 0
@@ -1004,7 +1016,7 @@ MonoBehaviour:
       type: 2}
     offset: {x: -0.25, y: -0.5, z: 0}
     initDelay: 0
-    fireRate: 1
+    fireRate: 0.8
     angle: 180
     speed: 1.5
     acceleration: 0
@@ -1121,7 +1133,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1137,7 +1148,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -1241,6 +1251,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!4 &2105169431
 Transform:
   m_ObjectHideFlags: 0
