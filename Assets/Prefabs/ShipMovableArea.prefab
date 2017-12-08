@@ -174,7 +174,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4339558886149734}
   - component: {fileID: 58335478156360992}
-  - component: {fileID: 114444422728183402}
   - component: {fileID: 50789396931760288}
   - component: {fileID: 212970467844819510}
   - component: {fileID: 114753302693531672}
@@ -576,7 +575,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417971733348354}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b495ebe639efcc4b9bd68a4cb4ec9d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 54f2b2bd70e8e4ab7add00590ef1bf80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tagToAbsorb: Bullet
@@ -594,18 +593,6 @@ MonoBehaviour:
   charge: 0
   maxCharge: 5
   laserBar: {fileID: 0}
---- !u!114 &114444422728183402
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1785284576128740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54f2b2bd70e8e4ab7add00590ef1bf80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagToAbsorb: Bullet
 --- !u!114 &114753302693531672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -625,7 +612,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1738039712815766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b495ebe639efcc4b9bd68a4cb4ec9d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 54f2b2bd70e8e4ab7add00590ef1bf80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tagToAbsorb: Bullet

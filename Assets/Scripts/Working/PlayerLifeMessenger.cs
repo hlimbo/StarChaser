@@ -17,7 +17,7 @@ public class PlayerLifeMessenger : MonoBehaviour, ILifeMessenger {
         maxLives = lives;
         for (int i = 0; i < lives; ++i)
         {
-            hearts[i] = transform.GetChild(i+1).GetComponent<Image>();
+            hearts[i] = transform.GetChild(i).GetComponent<Image>();
             hearts[i].enabled = true;
         }
     }
