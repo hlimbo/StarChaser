@@ -15,7 +15,7 @@ public class PlayerLifeSystem : MonoBehaviour, IWeaknessMessenger {
     [SerializeField]
     private bool isInvincible = false;
     private SpriteRenderer sr;
-    private CapsuleCollider2D hitCapsule;
+    private Collider2D hitCapsule;
 
     public GameObject sideAbsorberGO_L;
     public GameObject sideAbsorberGO_R;
@@ -45,7 +45,7 @@ public class PlayerLifeSystem : MonoBehaviour, IWeaknessMessenger {
         lifeMessenger = FindObjectOfType<PlayerLifeMessenger>();
         Assert.IsNotNull(lifeMessenger, "PlayerLifeMessenger script reference is null");
         sr = GetComponent<SpriteRenderer>();
-        hitCapsule = GetComponent<CapsuleCollider2D>();
+        hitCapsule = GetComponent<Collider2D>();
 
         sideAbsorberGO_L = GameObject.Find("SideAbsorber_L");
         sideAbsorberGO_R = GameObject.Find("SideAbsorber_R");
