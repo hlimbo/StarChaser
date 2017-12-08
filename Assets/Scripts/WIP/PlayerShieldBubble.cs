@@ -6,7 +6,7 @@ public class PlayerShieldBubble : MonoBehaviour{
 
     public GameObject shield;
     public GameObject playerShip;
-    private CapsuleCollider2D shipHitbox;
+    private Collider2D shipHitbox;
     private CooldownTimer shieldCD;
     private EventTrigger trigger;
     private AudioSource audioSrc;
@@ -27,7 +27,7 @@ public class PlayerShieldBubble : MonoBehaviour{
         EventTriggerHelper.AddEvent(trigger, EventTriggerType.PointerDown, Shield);
         shieldCD = GetComponent<CooldownTimer>();
         audioSrc = GetComponent<AudioSource>();
-        shipHitbox = playerShip.GetComponent<CapsuleCollider2D>();
+        shipHitbox = playerShip.GetComponent<Collider2D>();
         bg_ready = transform.GetChild(1).GetComponent<Image>();
     }
 
