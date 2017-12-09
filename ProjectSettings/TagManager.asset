@@ -21,6 +21,9 @@ TagManager:
   - SideAbsorber
   - PausePanel
   - PauseButton
+  - BossPhase1
+  - BossPhase2
+  - BossPhase3
   layers:
   - Default
   - TransparentFX

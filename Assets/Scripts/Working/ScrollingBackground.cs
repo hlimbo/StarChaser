@@ -8,6 +8,8 @@ public class ScrollingBackground : MonoBehaviour {
     public float scrollSpeed;
     private RawImage background;
     private Vector2 moveOffset;
+    //used to restore the offset of the texture to prevent unnecessary changes to the source texture file in git
+    private Vector2 originalTexOffset;
 
     void Start()
     {
@@ -19,5 +21,11 @@ public class ScrollingBackground : MonoBehaviour {
     {
         moveOffset.Set(0f, Mathf.Repeat((scrollSpeed * Time.deltaTime) + background.material.mainTextureOffset.y, 1f));
         background.material.mainTextureOffset = moveOffset;
+    }
+
+    void OnApplicationQuit()
+    {
+        //restore texture offset back to normal
+        background.material.mainTextureOffset = originalTexOffset;
     }
 }

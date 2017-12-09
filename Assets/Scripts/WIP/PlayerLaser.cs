@@ -31,10 +31,8 @@ public class PlayerLaser : MonoBehaviour {
         shipAnim = playerShip.GetComponent<Animator>();
         energyAccum = playerShip.GetComponent<EnergyAccumulator>();
 
-        //drag and then remove finger off screen to fire laser
-        //EventTriggerHelper.AddEvent(trigger, EventTriggerType.EndDrag, Laser);
-        //tap the screen to fire laser
-        EventTriggerHelper.AddEvent(trigger, EventTriggerType.PointerDown, Laser);
+        //tap button to fire laser
+        EventTriggerHelper.AddEvent(trigger, EventTriggerType.PointerDown, ActivateLaser);
     }
     
     void Update ()
@@ -58,25 +56,9 @@ public class PlayerLaser : MonoBehaviour {
     }
 
     //PointerDown ~ touch press to shoot laser
-    public void Laser(PointerEventData data)
+    public void ActivateLaser(PointerEventData data)
     {
         if(!laser.activeInHierarchy && !laserCD.isOnCooldown)
-        {
-            if (energyAccum.charge == energyAccum.maxCharge)
-            {
-                //Debug.Log("laser");
-                shipAnim.SetBool("laserActive", true);
-                laserCD.enabled = true;
-                laser.SetActive(true);
-                audioSrc.Play();
-            }
-
-        }
-    }
-
-    public void Laser()
-    {
-        if (!laser.activeInHierarchy && !laserCD.isOnCooldown)
         {
             if (energyAccum.charge == energyAccum.maxCharge)
             {
