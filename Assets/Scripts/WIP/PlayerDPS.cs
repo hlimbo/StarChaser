@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//This Component is responsible for calculating DPS to be sent to an enemy ~ attach to ShipPivot
+//This Component is responsible for sending DPS information to affected enemies ~ attach to ShipPivot
 public class PlayerDPS : MonoBehaviour {
 
-    public int dps;
-    public float frequency = 0.02f;
+    //maxDamage = maxDPS * (laserCD.abilityTimer.duration)
+    public int maxDPS;
+    public float frequency = 0.02f;//how much damage percentage to apply per frame
     [SerializeField]
     private float damagePerFrame;//damage to be sent to enemy per frame (continuous)
-    public float DamagePerFrame { get { return dps * frequency; } }
+    public float DamagePerFrame { get { return maxDPS * frequency; } }
 
     private void Update()
     {

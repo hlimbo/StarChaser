@@ -71,4 +71,6 @@ public class PlayerLaser : MonoBehaviour {
 
         }
     }
+
+    //send damage per frame
 }

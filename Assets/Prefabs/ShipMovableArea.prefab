@@ -598,7 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd826097823db14291a896870f887f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dps: 20
+  maxDPS: 20
   frequency: 0.02
   damagePerFrame: 0
 --- !u!114 &114341530426648832
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charge: 0
-  maxCharge: 5
+  maxCharge: 1
   laserBar: {fileID: 0}
 --- !u!114 &114753302693531672
 MonoBehaviour:
