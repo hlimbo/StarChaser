@@ -719,6 +719,11 @@ Prefab:
       propertyPath: abilityBar
       value: 
       objectReference: {fileID: 1712894810}
+    - target: {fileID: 114786878233993194, guid: f2f3a16cfc293b8418bd73b3a3fda9df,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 8431d7b483bc5ed419630c44062668c0, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2f3a16cfc293b8418bd73b3a3fda9df, type: 2}
   m_IsPrefabParent: 0

@@ -3,6 +3,6 @@
 //interface used to communicate between 
 public interface IEnergyMessenger : IEventSystemHandler {
 
-    void GainEnergy();
+    void GainEnergy(int value);
 
 }
