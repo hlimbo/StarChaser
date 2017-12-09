@@ -9,19 +9,19 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1623344706257306}
+  m_RootGameObject: {fileID: 1182812416046642}
   m_IsPrefabParent: 1
---- !u!1 &1623344706257306
+--- !u!1 &1182812416046642
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4027700351437840}
-  - component: {fileID: 212278035252437666}
-  - component: {fileID: 114029561567918202}
-  - component: {fileID: 114186260865779836}
+  - component: {fileID: 4560955965233282}
+  - component: {fileID: 212014146743176140}
+  - component: {fileID: 114646271498827702}
+  - component: {fileID: 114643280318344200}
   m_Layer: 0
   m_Name: Flying Enemy Type 2 1
   m_TagString: Enemy
@@ -29,61 +29,193 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4027700351437840
+--- !u!4 &4560955965233282
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1623344706257306}
+  m_GameObject: {fileID: 1182812416046642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0166416, y: 0, z: -0.0625}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114029561567918202
+--- !u!114 &114643280318344200
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1623344706257306}
+  m_GameObject: {fileID: 1182812416046642}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 870f53fd2f65f89418d6a37d3cadd37d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   emitters:
-  - projectilePrefab: {fileID: 1127542005509806, guid: c3cb2ce5fac6048d2b5f1f3c704b02f3,
+  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
       type: 2}
     offset: {x: 0, y: 0, z: 0}
     initDelay: 0
-    fireRate: 0.3
+    fireRate: 0
     angle: 0
-    speed: 2
+    speed: 1
     acceleration: 0
     fuel: 0
     unfocusRange: 0
     loopsTurning: 0
     turns: []
---- !u!114 &114186260865779836
+  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+      type: 2}
+    offset: {x: 0, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 30
+    speed: 1
+    acceleration: 0
+    fuel: 0
+    unfocusRange: 0
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+      type: 2}
+    offset: {x: 0, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 60
+    speed: 1
+    acceleration: 0
+    fuel: 0
+    unfocusRange: 0
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+      type: 2}
+    offset: {x: 0, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 90
+    speed: 1
+    acceleration: 0
+    fuel: 0
+    unfocusRange: 0
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+      type: 2}
+    offset: {x: 0, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 120
+    speed: 1
+    acceleration: 0
+    fuel: 0
+    unfocusRange: 0
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+      type: 2}
+    offset: {x: 0, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 150
+    speed: 1
+    acceleration: 0
+    fuel: 0
+    unfocusRange: 0
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+      type: 2}
+    offset: {x: 0, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 180
+    speed: 1
+    acceleration: 0
+    fuel: 0
+    unfocusRange: 0
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+      type: 2}
+    offset: {x: 0, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 210
+    speed: 1
+    acceleration: 0
+    fuel: 0
+    unfocusRange: 0
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+      type: 2}
+    offset: {x: 0, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 240
+    speed: 1
+    acceleration: 0
+    fuel: 0
+    unfocusRange: 0
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+      type: 2}
+    offset: {x: 0, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 270
+    speed: 1
+    acceleration: 0
+    fuel: 0
+    unfocusRange: 0
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+      type: 2}
+    offset: {x: 0, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 300
+    speed: 1
+    acceleration: 0
+    fuel: 0
+    unfocusRange: 0
+    loopsTurning: 0
+    turns: []
+  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+      type: 2}
+    offset: {x: 0, y: 0, z: 0}
+    initDelay: 0
+    fireRate: 1
+    angle: 330
+    speed: 1
+    acceleration: 0
+    fuel: 0
+    unfocusRange: 0
+    loopsTurning: 0
+    turns: []
+--- !u!114 &114646271498827702
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1623344706257306}
+  m_GameObject: {fileID: 1182812416046642}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 163361c0c6c444366b31c0d09ff56168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
---- !u!212 &212278035252437666
+  speed: 0.7
+--- !u!212 &212014146743176140
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1623344706257306}
+  m_GameObject: {fileID: 1182812416046642}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -110,10 +242,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d55c88ce18d68b4bbc453461bce959c, type: 3}
-  m_Color: {r: 0.516, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 26a572f2d37203c459cc1213d36995e2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
