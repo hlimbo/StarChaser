@@ -76,14 +76,20 @@ public class BossManager : MonoBehaviour {
         
         //Update HP Values per body part
         {
-            leftHandHP = leftHand.GetComponent<BossHP>().hp;
-            rightHandHP = rightHand.GetComponent<BossHP>().hp;
+            leftHandHP = SetHP(leftHand);
+            rightHandHP = SetHP(rightHand);
+            //TODO: create another gameObject for the boss's mouth
             Assert.IsTrue(head.GetComponents<BossHP>().Length == 2, "Boss Head GameObject must have 2 BossHP scripts attached to it");
             headHP = head.GetComponents<BossHP>()[0].hp;
             mouthHP = head.GetComponents<BossHP>()[1].hp;
         }
 
         bossPhase = BossPhase;//debug to see in editor
+    }
+
+    private float SetHP(GameObject bodyPart)
+    {
+        return bodyPart.activeInHierarchy ? bodyPart.GetComponent<BossHP>().hp : 0f;
     }
 
 }

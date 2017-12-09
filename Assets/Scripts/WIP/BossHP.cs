@@ -30,32 +30,54 @@ public class BossHP : MonoBehaviour,IWeaknessMessenger {
 
 
     IEnumerator CalculateDamageTime(Collider2D collision)
-    {     
-        float startTime = Time.time;
+    {
         PlayerDPS dps = collision.GetComponent<PlayerDPS>();
+        float bodyPartHP = hp;//I have to cache the value here to compare its modified hp to the expected hp count after laser stops hitting body part
+        float startTime = Time.time;
+        float deltaTime = 0f;
+        float realTimeDamage = 0f;
         //I need to interrupt the coroutine here when laser is no longer on this body part
         while (isReceivingDamage && laserCD.isAbilityActive)
         {
-            yield return new WaitForSeconds(dps.frequency);
+            bodyPartHP -= dps.maxDPS * deltaTime;
+            if (bodyPartHP <= 0f)//determine if body part is dead
+            {
+                gameObject.SetActive(false);
+                yield break;
+            }
+
+            //calculates approxmiate total damage dealt to this gameObject every coroutine 
+            realTimeDamage += dps.maxDPS * deltaTime;
+            float startDeltaTime = Time.time;
+            //Does not guarantee that the time it will take to resume this coroutine will be exactly dps.frequency
+            yield return new WaitForSeconds(dps.frequency); 
+            deltaTime = Time.time - startDeltaTime;
             elapsedDamageTime = Time.time - startTime;
         }
+
+        Debug.Log("BodyPartHP: " + bodyPartHP);
+        Debug.Log("realTimeDamage: " + realTimeDamage);
     }
 
-    //apply final damage calculations made in CalculateDamagePerFrame ~ need to consider this design as well for enemies!
+
+    //apply final damage calculations made in CalculateDamageTime ~ need to consider this design as well for enemies!
     private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.tag.Equals("Laser"))
         {
-            isReceivingDamage = false;
-            PlayerDPS dps = collision.GetComponent<PlayerDPS>();
-            //adjust total damage received based on the time the laser spent on this boss body part
-            float timeSpent = Mathf.Clamp(elapsedDamageTime, 0f, laserCD.abilityTimer.duration);
-            float totalDamageReceived = dps.DamagePerFrame * (1f / dps.frequency) * timeSpent;
+            //calculate final damage laser has dealt to this gameObject
+            {
+                isReceivingDamage = false;
+                PlayerDPS dps = collision.GetComponent<PlayerDPS>();
+                //adjust total damage received based on the time the laser spent on this boss body part
+                float timeSpent = Mathf.Clamp(elapsedDamageTime, 0f, laserCD.abilityTimer.duration);
+                float totalDamageReceived = dps.DamagePerFrame * (1f / dps.frequency) * timeSpent;
 
-            Debug.Log(gameObject.name + " totalDamageReceived: " + totalDamageReceived);
+                Debug.Log(gameObject.name + " totalDamageReceived: " + totalDamageReceived);
 
-            hp -= totalDamageReceived;
-            bm.ApplyDamage(totalDamageReceived);
+                hp -= totalDamageReceived;
+                bm.ApplyDamage(totalDamageReceived);
+            }
         }
     }
 }

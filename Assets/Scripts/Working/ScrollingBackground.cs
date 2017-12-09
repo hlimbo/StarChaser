@@ -15,6 +15,7 @@ public class ScrollingBackground : MonoBehaviour {
     {
         background = GetComponent<RawImage>();
         moveOffset = Vector2.zero;
+        originalTexOffset = background.material.mainTextureOffset;
     }
 
     void Update ()
