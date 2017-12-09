@@ -19,7 +19,7 @@ public class Homing : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-        if (Vector3.Distance(transform.position, player.transform.position) <= unfocusRange) {
+        if (player == null || Vector3.Distance(transform.position, player.transform.position) <= unfocusRange) {
             fuel = 0.0f;
         }
         if (fuel > 0.0f) {
