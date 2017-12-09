@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-        transform.Translate(transform.up * Time.deltaTime * speed, Space.World);
+        if(Camera.main == GetComponent<Camera>() || GetComponent<SpriteRenderer>().isVisible)
+            transform.Translate(transform.up * Time.deltaTime * speed, Space.World);
     }
 }
