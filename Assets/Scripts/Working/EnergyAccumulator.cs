@@ -24,12 +24,12 @@ public class EnergyAccumulator : MonoBehaviour, IEnergyMessenger
         currentChargePercent = targetChargePercent = 0f;
     }
 
-    public void GainEnergy()
+    public void GainEnergy(int value)
     {
-        if (charge + 1 <= maxCharge)
+        if (charge + value <= maxCharge)
         {
             currentChargePercent = (float)charge / maxCharge;
-            targetChargePercent = (float)(++charge) / maxCharge;
+            targetChargePercent = (float)(charge += value) / maxCharge;
         }
     }
     void Update()

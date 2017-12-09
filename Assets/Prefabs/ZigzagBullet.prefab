@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114309604803184676}
   - component: {fileID: 114435205218964586}
   - component: {fileID: 114036348747916150}
+  - component: {fileID: 114767122728699796}
   m_Layer: 0
   m_Name: ZigzagBullet
   m_TagString: Bullet
@@ -105,6 +106,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+--- !u!114 &114767122728699796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1571705040099150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c3da0d8520d43e897c668aadadd2b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
 --- !u!212 &212538315573243066
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -33,8 +33,10 @@ public class EnergyAbsorber : MonoBehaviour
     {
         if (playerEnergy != null && tagToAbsorb.Equals(collider.tag))
         {
-            // Debug.Log(collider.tag);
-            ExecuteEvents.Execute<IEnergyMessenger>(playerEnergy.gameObject, null, (x, y) => x.GainEnergy());
+            Value val = collider.GetComponent<Value>();
+            Assert.IsNotNull(val, "Value component is missing from " + collider.name);
+           // Debug.Log(collider.gameObject.name + " " + val.value);
+            ExecuteEvents.Execute<IEnergyMessenger>(playerEnergy.gameObject, null, (x, y) => x.GainEnergy(val.value));
         }
     }
 
