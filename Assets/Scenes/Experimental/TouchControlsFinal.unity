@@ -332,6 +332,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   center: {fileID: 1288310809}
   rotateSpeed: 120
+  originalQuat: {x: 0, y: 0, z: 0, w: 0}
+  originalPos: {x: 0, y: 0, z: 0}
+  canRotate: 0
 --- !u!1 &189824140
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +406,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 189824140}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.1, y: 2.57, z: 0}
+  m_LocalPosition: {x: 0, y: 2.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -949,7 +952,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1288310809}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.100000024, y: 2.57, z: 0}
+  m_LocalPosition: {x: 0, y: 2.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 168797503}
@@ -968,7 +971,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea9a43c091ae0694d873750ae67ffa1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2.5
+  changeDirectionDelay: 1.5
+  moveSpeed: 2.5
+  isMovingForwards: 1
+  originalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1320522155 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1785284576128740, guid: 956b0a6665f07704c8cfea0cd92ee5ac,
@@ -1260,6 +1266,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   center: {fileID: 1288310809}
   rotateSpeed: 120
+  originalQuat: {x: 0, y: 0, z: 0, w: 0}
+  originalPos: {x: 0, y: 0, z: 0}
+  canRotate: 0
 --- !u!224 &2061246526 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224839747482145618, guid: a497f89451eef9740abdc76c95122f50,
