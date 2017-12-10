@@ -40,7 +40,7 @@ public class Emitter : MonoBehaviour {
     public EmitterOrigin[] emitters;
 
     // Use this for initialization
-    void Start ()
+    void OnEnable ()
     {
         foreach (EmitterOrigin e in emitters) {
             StartCoroutine (FireProjectile (e));
@@ -55,10 +55,16 @@ public class Emitter : MonoBehaviour {
         }
     }
 
+    void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     IEnumerator FireProjectile(EmitterOrigin e)
     {
-        while(true)
+        while(enabled)
         {
+            Debug.Log("firing");
             if (e.initDelay <= 0.0f && e.fireRate > 0.0f && GetComponent<SpriteRenderer>().isVisible) {
                 GameObject bullet = Instantiate<GameObject> (e.projectilePrefab, transform.position + e.offset, Quaternion.identity);
                 bullet.GetComponent<Movement> ().speed = e.speed;

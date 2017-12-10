@@ -34,15 +34,14 @@ public class BossAttackPattern1 : MonoBehaviour {
                 elapsedTime = Time.time - startTime;
             }
 
-            if (moveArms.enabled == false)
+            if (!moveArms.enabled)
             {
                 ToggleArmEmitters(false);
                 moveArms.enabled = true;
             }
-            else
-            {
-                ToggleArmEmitters(true);
-            }
+
+            yield return new WaitForSeconds(moveArms.changeDirectionDelay * 4f);
+            ToggleArmEmitters(true);
 
         }
     }
@@ -51,7 +50,7 @@ public class BossAttackPattern1 : MonoBehaviour {
     {
         for (int i = 0; i < transform.childCount; ++i)
         {
-            arms[i].GetComponent<ArmRotations>().enabled = toggle;
+            arms[i].GetComponent<Emitter>().enabled = toggle;
         }
     }
 }

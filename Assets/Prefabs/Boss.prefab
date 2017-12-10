@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4523924769368104}
   - component: {fileID: 114421742751754390}
+  - component: {fileID: 114813865845874988}
   m_Layer: 0
   m_Name: Center
   m_TagString: BossPhase1
@@ -574,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea9a43c091ae0694d873750ae67ffa1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeDirectionDelay: 1.5
+  changeDirectionDelay: 2
   moveSpeed: 2.5
   isMovingForwards: 0
   originalPos: {x: 0, y: 0, z: 0}
@@ -658,6 +659,18 @@ MonoBehaviour:
   originalRot: {x: 0, y: 0, z: 0, w: 0}
   originalPos: {x: 0, y: 0, z: 0}
   canRotate: 0
+--- !u!114 &114813865845874988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1023396212739086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0067ec701cccc44a7c694599e465e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackFrequency: 10
 --- !u!114 &114824320150898946
 MonoBehaviour:
   m_ObjectHideFlags: 1
