@@ -6,7 +6,7 @@ public class MoveArms : MonoBehaviour {
 
     public float changeDirectionDelay;
     public float moveSpeed;
-    public bool isMovingForwards = true;
+    public bool isMovingForwards = false;
     public Vector3 originalPos;
 
     //use this bool to check if arms moved back to its original position
@@ -21,11 +21,26 @@ public class MoveArms : MonoBehaviour {
     void Awake()
     {
         originalPos = transform.position;
+        enabled = false;
     }
 
-    void Start()
+    void OnEnable()
     {
+        isMovingForwards = true;
+        foreach(var child in transform.GetComponentsInChildren<ArmRotations>())
+        {
+            child.enabled = true;
+        }
         StartCoroutine(ChangeMoveDirectionDelay());
+    }
+
+    void OnDisable()
+    {
+        foreach (var child in transform.GetComponentsInChildren<ArmRotations>())
+        {
+            child.enabled = false;
+        }
+
     }
 
     void Update()
@@ -35,6 +50,18 @@ public class MoveArms : MonoBehaviour {
             transform.Translate(transform.up * -1 * Time.deltaTime * moveSpeed, Space.World);
         else
             transform.position = Vector3.MoveTowards(transform.position, originalPos, moveSpeed * Time.deltaTime);
+
+        bool canDisable = true;
+        foreach(var child in transform.GetComponentsInChildren<ArmRotations>())
+        {
+            if (child.transform.position != child.originalPos)
+            {
+                canDisable = false;
+                break;
+            }
+        }
+        if (hasReturned && canDisable)
+            enabled = false;
     }
 
     public IEnumerator ChangeMoveDirectionDelay()

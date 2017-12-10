@@ -247,7 +247,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1407422719133946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12, y: -3.29, z: 0}
+  m_LocalPosition: {x: -2.18, y: -3.29, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 4139566011744394}
@@ -458,7 +458,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -570,6 +570,9 @@ MonoBehaviour:
   weaknessTags:
   - Bullet
   - Enemy
+  - BossPhase1
+  - BossPhase2
+  - BossPhase3
 --- !u!114 &114153434193908908
 MonoBehaviour:
   m_ObjectHideFlags: 1

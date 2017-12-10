@@ -6,18 +6,23 @@ public class ArmRotations : MonoBehaviour {
 
     public GameObject center;
     public float rotateSpeed = 120.0f;
+    public float moveSpeed = 2.5f;
     public Quaternion originalRot;
     public Vector3 originalPos;
     public bool canRotate;
 
     private MoveArms moveArms;
 
-    // Use this for initialization
-    void Start () {
+    void Awake()
+    {
+        moveArms = transform.parent.GetComponent<MoveArms>();
+        enabled = false;
+    }
+
+    void OnEnable () {
         originalRot = transform.rotation;
         originalPos = transform.position;
         canRotate = true;
-        moveArms = transform.parent.GetComponent<MoveArms>();
     }
     
     // Update is called once per frame
@@ -33,7 +38,7 @@ public class ArmRotations : MonoBehaviour {
         {
             canRotate = false;
             transform.rotation = originalRot;
-            transform.position = Vector3.MoveTowards(transform.position, originalPos, rotateSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, originalPos, moveSpeed * Time.deltaTime);
         }
 
         if (canRotate)

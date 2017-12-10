@@ -9,7 +9,7 @@ public class BulletKiller : MonoBehaviour {
 
     void Start () {
         entityBounds = GetComponent<BoxCollider2D>();
-        entityBounds.size = new Vector2(Camera.main.orthographicSize * Camera.main.aspect * 2f, Camera.main.orthographicSize * 2);
+        entityBounds.size = new Vector2(Camera.main.orthographicSize * Camera.main.aspect * 2.5f, Camera.main.orthographicSize * 2.5f);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
