@@ -14,7 +14,7 @@ public class MoveArms : MonoBehaviour {
     {
         get
         {
-            return !isMovingForwards && originalPos == transform.position;
+            return !isMovingForwards && ApproxEqual(transform.position, originalPos, .002f);
         }
     }
 
@@ -47,7 +47,7 @@ public class MoveArms : MonoBehaviour {
     {
         //stop moving backwards once the center position of the arms moves back to the original position.
         if (isMovingForwards)
-            transform.Translate(transform.up * -1 * Time.deltaTime * moveSpeed, Space.World);
+            transform.Translate(transform.up * -1 * Time.deltaTime * moveSpeed, Space.Self);
         else
             transform.position = Vector3.MoveTowards(transform.position, originalPos, moveSpeed * Time.deltaTime);
 
@@ -75,5 +75,15 @@ public class MoveArms : MonoBehaviour {
         }
         isMovingForwards = false;
         yield return null;
+    }
+
+    private bool ApproxEqual(Vector3 a,Vector3 b,float tolerance)
+    {
+        return AlmostEqual(a.x, b.x, tolerance) && AlmostEqual(a.y, b.y, tolerance) && AlmostEqual(a.z, b.z, tolerance);
+    }
+
+    private bool AlmostEqual(float a, float b, float epsilon)
+    {
+        return Mathf.Abs(a - b) < epsilon;
     }
 }

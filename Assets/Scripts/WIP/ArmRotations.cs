@@ -16,13 +16,20 @@ public class ArmRotations : MonoBehaviour {
     void Awake()
     {
         moveArms = transform.parent.GetComponent<MoveArms>();
+        originalRot = transform.rotation;
+        originalPos = transform.position;
         enabled = false;
     }
 
-    void OnEnable () {
-        originalRot = transform.rotation;
-        originalPos = transform.position;
+    void OnEnable ()
+    {
         canRotate = true;
+    }
+
+    void OnDisable()
+    {
+        transform.rotation = originalRot;
+        transform.position = originalPos;
     }
     
     // Update is called once per frame
@@ -36,6 +43,7 @@ public class ArmRotations : MonoBehaviour {
 
         if (moveArms.hasReturned)
         {
+            moveArms.enabled = false;
             canRotate = false;
             transform.rotation = originalRot;
             transform.position = Vector3.MoveTowards(transform.position, originalPos, moveSpeed * Time.deltaTime);
