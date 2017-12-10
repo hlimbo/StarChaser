@@ -9,9 +9,11 @@ public class PlayerLifeMessenger : MonoBehaviour, ILifeMessenger {
     [SerializeField]
     private Image[] hearts;
     private int maxLives;
+    private AudioSource aSrc;
 
     void Start()
     {
+        aSrc = GetComponent<AudioSource>();
         Assert.IsTrue(lives <= transform.childCount, "Lives: " + lives + " | transform.childCount: " + transform.childCount);
         hearts = new Image[lives];
         maxLives = lives;
@@ -27,6 +29,7 @@ public class PlayerLifeMessenger : MonoBehaviour, ILifeMessenger {
         Debug.Log("Lose 1 life");
         hearts[Mathf.Clamp(lives - 1,0,maxLives - 1)].enabled = false;
         lives = Mathf.Clamp(--lives, 0, maxLives);
+        aSrc.Play();
     }
 
     public void GainLife()
