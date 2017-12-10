@@ -6,6 +6,7 @@ public class EnergyAbsorber : MonoBehaviour
 {
     public string tagToAbsorb;
     private EnergyAccumulator playerEnergy;
+    private AudioSource aSrc;
 
     private GameObject laserGO;
     private string untagged = "Untagged";
@@ -15,6 +16,7 @@ public class EnergyAbsorber : MonoBehaviour
     {
         laserGO = GameObject.Find("LaserPivot");
         Assert.IsNotNull(laserGO, "LaserPivot game object is missing from the scene");
+        aSrc = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -37,6 +39,7 @@ public class EnergyAbsorber : MonoBehaviour
             Assert.IsNotNull(val, "Value component is missing from " + collider.name);
            // Debug.Log(collider.gameObject.name + " " + val.value);
             ExecuteEvents.Execute<IEnergyMessenger>(playerEnergy.gameObject, null, (x, y) => x.GainEnergy(val.value));
+            aSrc.Play();
         }
     }
 
