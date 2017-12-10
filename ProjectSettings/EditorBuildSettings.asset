@@ -8,12 +8,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Experimental/TouchControlsFinal.unity
     guid: f49a059538fbc1a498cd179e58c2c6c0
-  - enabled: 1
-    path: Assets/Scenes/Experimental/MainMenu.unity
-    guid: 71c0075e33cfd4b4e9f825f6342b831b
-  - enabled: 1
-    path: Assets/Scenes/Experimental/Settings.unity
-    guid: 39a4b09fcfa70426c8602d04fec5645c
-  - enabled: 1
-    path: Assets/Scenes/Experimental/Credits.unity
-    guid: e4eebf08c19454a4d87c81f93422999e

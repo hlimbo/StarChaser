@@ -24,6 +24,11 @@ public class ScrollingBackground : MonoBehaviour {
         background.material.mainTextureOffset = moveOffset;
     }
 
+    private void OnDestroy()
+    {
+        background.material.mainTextureOffset = originalTexOffset;
+    }
+
     void OnApplicationQuit()
     {
         //restore texture offset back to normal
