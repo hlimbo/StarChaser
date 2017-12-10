@@ -9,6 +9,7 @@ public class BossHP : MonoBehaviour,IWeaknessMessenger {
 
     public float hp;
     private BossManager bm;
+    public BossManager.Phase phase;
     private CooldownTimer laserCD;
     [SerializeField]
     private bool isReceivingDamage = false;
@@ -24,8 +25,11 @@ public class BossHP : MonoBehaviour,IWeaknessMessenger {
 
     public void OnWeaknessReceived(Collider2D collision)
     {
-        isReceivingDamage = true;
-        StartCoroutine(CalculateDamageTime(collision));
+        if (phase == bm.BossPhase)
+        {
+            isReceivingDamage = true;
+            StartCoroutine(CalculateDamageTime(collision));
+        }
     }
 
 
@@ -75,8 +79,16 @@ public class BossHP : MonoBehaviour,IWeaknessMessenger {
 
                 Debug.Log(gameObject.name + " totalDamageReceived: " + totalDamageReceived);
 
-                hp -= totalDamageReceived;
-                bm.ApplyDamage(totalDamageReceived);
+                if (hp - totalDamageReceived < 0f)
+                {
+                    bm.ApplyDamage(hp);
+                    hp = 0f;
+                }
+                else
+                {
+                    bm.ApplyDamage(totalDamageReceived);
+                    hp -= totalDamageReceived;
+                }
             }
         }
     }

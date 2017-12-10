@@ -27,12 +27,20 @@ public class BossManager : MonoBehaviour {
     [SerializeField]
     private GameObject head;
     [SerializeField]
+    private GameObject mouth;
+    [SerializeField]
     private Phase bossPhase;
 
     public bool IsDead
     {
-        get { return totalHP <= 0f; }
+        get { return bossPhase == Phase.DEAD; }
     }
+
+    public float TotalHP
+    {
+        get { return (leftHandHP + rightHandHP + headHP + mouthHP); }
+    }
+
 
     public Phase BossPhase
     {
@@ -42,8 +50,10 @@ public class BossManager : MonoBehaviour {
                 return Phase.EASY;
             if (headHP > 0f)
                 return Phase.ANGRY;
-            //mouthHP > 0
-            return Phase.PSYCHO;
+            if(mouthHP > 0)
+                return Phase.PSYCHO;
+
+            return Phase.DEAD;
         }
     }
 
@@ -53,38 +63,60 @@ public class BossManager : MonoBehaviour {
         leftHand = GameObject.Find("LeftHand");
         rightHand = GameObject.Find("RightHand");
         head = GameObject.Find("Head");
+        mouth = GameObject.Find("Mouth");
 
         //initialize hp values per body part
         {
             leftHand.GetComponent<BossHP>().hp = leftHandHP;
             rightHand.GetComponent<BossHP>().hp = rightHandHP;
-            Assert.IsTrue(head.GetComponents<BossHP>().Length == 2, "Boss Head GameObject must have 2 BossHP scripts attached to it");
-            head.GetComponents<BossHP>()[0].hp = headHP;
-            head.GetComponents<BossHP>()[1].hp = mouthHP;
+            head.GetComponent<BossHP>().hp = headHP;
+            mouth.GetComponent<BossHP>().hp = mouthHP;
         }
 
     }
 
     void Start()
     {
-        totalHP = leftHandHP + rightHandHP + headHP + mouthHP;
+        totalHP = TotalHP;
+    }
+
+    void Update()
+    {
+        switch (bossPhase)
+        {
+            case Phase.PSYCHO:
+                head.GetComponent<Animator>().SetBool("canBite", true);
+                head.SetActive(true);
+                head.GetComponent<Collider2D>().enabled = false;
+                mouth.SetActive(true);
+                break;
+            case Phase.DEAD:
+                head.SetActive(false);
+                mouth.SetActive(false);
+                break;
+        }
     }
 
     public void ApplyDamage(float damage)
     {
-        totalHP -= damage;
-        
         //Update HP Values per body part
+        switch (BossPhase)
         {
-            leftHandHP = SetHP(leftHand);
-            rightHandHP = SetHP(rightHand);
-            //TODO: create another gameObject for the boss's mouth
-            Assert.IsTrue(head.GetComponents<BossHP>().Length == 2, "Boss Head GameObject must have 2 BossHP scripts attached to it");
-            headHP = head.GetComponents<BossHP>()[0].hp;
-            mouthHP = head.GetComponents<BossHP>()[1].hp;
+            case Phase.EASY:
+                leftHandHP = SetHP(leftHand);
+                rightHandHP = SetHP(rightHand);
+                break;
+            case Phase.ANGRY:
+                headHP = SetHP(head);
+                break;
+            case Phase.PSYCHO:
+                mouthHP = SetHP(mouth);
+                break;
+            case Phase.DEAD:
+                break;
         }
-
         bossPhase = BossPhase;//debug to see in editor
+        totalHP = TotalHP;
     }
 
     private float SetHP(GameObject bodyPart)
