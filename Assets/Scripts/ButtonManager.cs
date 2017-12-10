@@ -4,19 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour {
-	public void playButtonClicked(string sceneToLoad) {
+	public void switchToScene(string sceneToLoad) {
 		SceneManager.LoadSceneAsync (sceneToLoad);
 	}
-
-	public void creditsButtonClicked(string sceneToLoad) {
+	public void creditsGoBack(string sceneToLoad) {
 		SceneManager.LoadSceneAsync (sceneToLoad);
-	}
-
-	public void settingsButtonClicked(string sceneToLoad) {
-		SceneManager.LoadSceneAsync (sceneToLoad);
-	}
-
-	void FixedUpdate() {
-
+		Debug.Log ("clcik");
 	}
 }
