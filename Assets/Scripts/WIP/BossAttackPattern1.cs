@@ -9,7 +9,7 @@ public class BossAttackPattern1 : MonoBehaviour {
 
     public float attackFrequency = 10f;
 
-    void Start()
+    void Awake()
     {
         moveArms = GetComponent<MoveArms>();
         arms = new Transform[2];
@@ -17,8 +17,17 @@ public class BossAttackPattern1 : MonoBehaviour {
         {
             arms[i] = transform.GetChild(i);
         }
+        enabled = false;
+    }
 
+    void OnEnable()
+    {
         StartCoroutine(AlternateAttacks());
+    }
+
+    void OnDisable()
+    {
+        StopCoroutine(AlternateAttacks());
     }
 
     //every other attackFrequency seconds, enable moveArms component
@@ -26,13 +35,7 @@ public class BossAttackPattern1 : MonoBehaviour {
     {
         while (enabled)
         {
-            float startTime = Time.time;
-            float elapsedTime = Time.time - startTime;
-            while (elapsedTime < attackFrequency)
-            {
-                yield return new WaitForSeconds(1f);
-                elapsedTime = Time.time - startTime;
-            }
+            yield return new WaitForSeconds(attackFrequency);
 
             if (!moveArms.enabled)
             {

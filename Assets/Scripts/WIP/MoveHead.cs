@@ -2,12 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveArms : MonoBehaviour {
+public class MoveHead : MonoBehaviour {
 
-    public float changeDirectionDelay;
+    public float timeToMoveForward;
+    public float timeToBite = 0.6f;
     public float moveSpeed;
     public bool isMovingForwards = false;
     public Vector3 originalPos;
+
+    [SerializeField]
+    private GameObject biteBox;
+
+    public float TotalDuration
+    {
+        get { return timeToMoveForward * 2f + timeToBite; }
+    }
+
+    private Animator anim;
 
     //use this bool to check if arms moved back to its original position
     public bool hasReturned
@@ -20,58 +31,44 @@ public class MoveArms : MonoBehaviour {
 
     void Awake()
     {
+        biteBox = transform.GetChild(0).gameObject;
+        biteBox.SetActive(false);
         originalPos = transform.position;
+        anim = GetComponent<Animator>();
         enabled = false;
     }
 
     void OnEnable()
     {
         isMovingForwards = true;
-        foreach(var child in transform.GetComponentsInChildren<ArmRotations>())
-        {
-            child.enabled = true;
-        }
         StartCoroutine(ChangeMoveDirectionDelay());
-    }
-
-    void OnDisable()
-    {
-        foreach (var child in transform.GetComponentsInChildren<ArmRotations>())
-        {
-            child.enabled = false;
-        }
-
     }
 
     void Update()
     {
-        //stop moving backwards once the center position of the arms moves back to the original position.
         if (isMovingForwards)
             transform.Translate(transform.up * -1 * Time.deltaTime * moveSpeed, Space.Self);
-        else
+        else if(!anim.GetBool("canBite") && !isMovingForwards)
             transform.position = Vector3.MoveTowards(transform.position, originalPos, moveSpeed * Time.deltaTime);
 
-        bool canDisable = true;
-        foreach(var child in transform.GetComponentsInChildren<ArmRotations>())
-        {
-            if (child.transform.position != child.originalPos)
-            {
-                canDisable = false;
-                break;
-            }
-        }
-        if (hasReturned && canDisable)
+        if (hasReturned)
             enabled = false;
     }
 
     IEnumerator ChangeMoveDirectionDelay()
     {
-        yield return new WaitForSeconds(changeDirectionDelay);
+        yield return new WaitForSeconds(timeToMoveForward);
         isMovingForwards = false;
+        //bite animation starts here
+        anim.SetBool("canBite", true);
+        biteBox.SetActive(true);
+        yield return new WaitForSeconds(timeToBite);
+        biteBox.SetActive(false);
+        anim.SetBool("canBite", false);
         yield return null;
     }
 
-    private bool ApproxEqual(Vector3 a,Vector3 b,float tolerance)
+    private bool ApproxEqual(Vector3 a, Vector3 b, float tolerance)
     {
         return AlmostEqual(a.x, b.x, tolerance) && AlmostEqual(a.y, b.y, tolerance) && AlmostEqual(a.z, b.z, tolerance);
     }
