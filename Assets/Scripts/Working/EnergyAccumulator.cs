@@ -11,11 +11,17 @@ public class EnergyAccumulator : MonoBehaviour, IEnergyMessenger
     public Slider laserBar;
     private float currentChargePercent;
     private float targetChargePercent;
+    private AudioSource aSrc;
+    public AudioClip chargeCompleteSFX;
+    public AudioClip chargeSFX;
+
+    public bool HasFullCharge { get { return charge >= maxCharge; } }
 
     void Awake()
     {
         GameObject go = GameObject.Find("LaserBar");
         laserBar = go.GetComponent<Slider>();
+        aSrc = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -30,6 +36,8 @@ public class EnergyAccumulator : MonoBehaviour, IEnergyMessenger
         {
             currentChargePercent = (float)charge / maxCharge;
             targetChargePercent = (float)(charge += value) / maxCharge;
+            aSrc.clip = HasFullCharge ? chargeCompleteSFX : chargeSFX;
+            aSrc.Play();
         }
     }
     void Update()
