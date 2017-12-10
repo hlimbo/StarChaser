@@ -325,7 +325,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 821473680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -65.2, y: -189, z: 0}
+  m_LocalPosition: {x: -60.7, y: -181, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2070482101}
@@ -377,7 +377,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 196522372}
-        m_MethodName: creditsButtonClicked
+        m_MethodName: switchToScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -584,7 +584,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1212240402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 117.5, y: 208.5, z: 0}
+  m_LocalPosition: {x: 113, y: 200.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1496568626}
@@ -678,7 +678,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 196522372}
-        m_MethodName: playButtonClicked
+        m_MethodName: switchToScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -764,10 +764,10 @@ RectTransform:
   m_Father: {fileID: 1212240406}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000002861, y: -12.4}
-  m_SizeDelta: {x: 1022.9, y: 515.4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.0000038146973, y: -12.400002}
+  m_SizeDelta: {x: 786.9, y: 99.400024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1496568627
 MonoBehaviour:
@@ -1037,7 +1037,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2145195686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 97.5, y: -189.9, z: 0}
+  m_LocalPosition: {x: 95.274994, y: -181.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 241085069}
@@ -1046,7 +1046,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 97.5, y: -189.9}
+  m_AnchoredPosition: {x: 95.274994, y: -181.65}
   m_SizeDelta: {x: 67.5, y: 28.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2145195688
@@ -1089,7 +1089,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 196522372}
-        m_MethodName: settingsButtonClicked
+        m_MethodName: switchToScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
