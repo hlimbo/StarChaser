@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour {
 	public void switchToScene(string sceneToLoad) {
+		Debug.Log ("clcik");
 		SceneManager.LoadSceneAsync (sceneToLoad);
 	}
 	public void creditsGoBack(string sceneToLoad) {
