@@ -123,6 +123,8 @@ GameObject:
   - component: {fileID: 61159139324453436}
   - component: {fileID: 114941546191930730}
   - component: {fileID: 114047876619352348}
+  - component: {fileID: 111343691656062790}
+  - component: {fileID: 114084224991102426}
   m_Layer: 0
   m_Name: Head
   m_TagString: BossPhase2
@@ -404,6 +406,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &111343691656062790
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959336028403586}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114013509923646582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -432,6 +448,17 @@ MonoBehaviour:
   phase: 1
   isReceivingDamage: 0
   elapsedDamageTime: 0
+--- !u!114 &114084224991102426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959336028403586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb6c6ba604f18544b863b551608db0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114166254898437994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -698,7 +725,7 @@ MonoBehaviour:
   leftHandHP: 60
   rightHandHP: 60
   headHP: 140
-  mouthHP: 80
+  mouthHP: 300
   totalHP: 0
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}

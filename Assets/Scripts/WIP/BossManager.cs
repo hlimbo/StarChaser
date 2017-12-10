@@ -85,8 +85,8 @@ public class BossManager : MonoBehaviour {
         switch (bossPhase)
         {
             case Phase.PSYCHO:
-                head.GetComponent<Animator>().SetBool("canBite", true);
                 head.SetActive(true);
+                head.GetComponent<Animator>().SetBool("canBite", true);
                 head.GetComponent<Collider2D>().enabled = false;
                 mouth.SetActive(true);
                 break;

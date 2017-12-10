@@ -64,7 +64,6 @@ public class Emitter : MonoBehaviour {
     {
         while(enabled)
         {
-            Debug.Log("firing");
             if (e.initDelay <= 0.0f && e.fireRate > 0.0f && GetComponent<SpriteRenderer>().isVisible) {
                 GameObject bullet = Instantiate<GameObject> (e.projectilePrefab, transform.position + e.offset, Quaternion.identity);
                 bullet.GetComponent<Movement> ().speed = e.speed;

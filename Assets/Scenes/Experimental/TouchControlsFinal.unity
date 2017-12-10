@@ -117,6 +117,36 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224976501197372728, guid: a497f89451eef9740abdc76c95122f50,
     type: 2}
   m_PrefabInternal: {fileID: 1014669583}
+--- !u!1 &189824140 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1959336028403586, guid: de4453b365e1edf42a06d4960e65a209,
+    type: 2}
+  m_PrefabInternal: {fileID: 1467863554}
+--- !u!114 &189824141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 189824140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb6c6ba604f18544b863b551608db0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!111 &189824147
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 189824140}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &364972292
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,6 +568,11 @@ Prefab:
         type: 2}
       propertyPath: m_LocalPosition.y
       value: -59.099976
+      objectReference: {fileID: 0}
+    - target: {fileID: 114438223199363414, guid: a497f89451eef9740abdc76c95122f50,
+        type: 2}
+      propertyPath: abilityTimer.duration
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a497f89451eef9740abdc76c95122f50, type: 2}
