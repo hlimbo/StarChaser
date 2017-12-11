@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 212253397178749494}
   - component: {fileID: 61553256937755706}
   - component: {fileID: 114445242830335630}
+  - component: {fileID: 114050141563045952}
   m_Layer: 0
   m_Name: Mouth
   m_TagString: BossPhase3
@@ -150,6 +151,7 @@ GameObject:
   - component: {fileID: 114166254898437994}
   - component: {fileID: 114772052628146062}
   - component: {fileID: 114489526382908600}
+  - component: {fileID: 114494793239829616}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: BossPhase1
@@ -291,6 +293,7 @@ GameObject:
   - component: {fileID: 114431449068636260}
   - component: {fileID: 114248459872496746}
   - component: {fileID: 114276538990280534}
+  - component: {fileID: 114494649493317346}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: BossPhase1
@@ -349,6 +352,7 @@ GameObject:
   - component: {fileID: 114084224991102426}
   - component: {fileID: 114958327049970978}
   - component: {fileID: 114722578480194098}
+  - component: {fileID: 114125337604963662}
   m_Layer: 0
   m_Name: Head
   m_TagString: BossPhase2
@@ -879,6 +883,21 @@ MonoBehaviour:
   phase: 1
   isReceivingDamage: 0
   elapsedDamageTime: 0
+--- !u!114 &114050141563045952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1032141424765174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.02
 --- !u!114 &114084224991102426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -895,6 +914,21 @@ MonoBehaviour:
   mouthSpawns: []
   counter: 0
   fireFrequency: 4
+--- !u!114 &114125337604963662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959336028403586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.02
 --- !u!114 &114166254898437994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1209,6 +1243,36 @@ MonoBehaviour:
     unfocusRange: 0
     loopsTurning: 0
     turns: []
+--- !u!114 &114494649493317346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1750234582242916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.02
+--- !u!114 &114494793239829616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1249061078814534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.02
 --- !u!114 &114508170974838956
 MonoBehaviour:
   m_ObjectHideFlags: 1
