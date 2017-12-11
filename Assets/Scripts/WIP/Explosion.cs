@@ -8,7 +8,6 @@ public class Explosion : MonoBehaviour {
 
     private void OnDisable()
     {
-        GameObject explosion = Instantiate<GameObject>(explosionPrefab, transform.position, Quaternion.identity, null);
-        explosion.GetComponent<ParticleSystem>().Play();
+        Instantiate<GameObject>(explosionPrefab, transform.position, Quaternion.identity, null);
     }
 }
