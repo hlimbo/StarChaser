@@ -12,6 +12,7 @@ public class StartAni : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-        //if()
+        if (transform.position.y <= Camera.main.transform.position.y + Camera.main.orthographicSize + 0.125f || Camera.main.GetComponent<Movement>().speed == 0f)
+//            anim.Play();
     }
 }
