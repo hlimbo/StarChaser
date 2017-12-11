@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114614172372231878}
   - component: {fileID: 114281575434152676}
   - component: {fileID: 95915415060193856}
+  - component: {fileID: 114447372745481952}
   m_Layer: 0
   m_Name: Flying Enemy Type 2
   m_TagString: Enemy
@@ -258,6 +259,18 @@ MonoBehaviour:
     unfocusRange: 0
     loopsTurning: 0
     turns: []
+--- !u!114 &114447372745481952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071619230108758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d467b7e74f36f1d45a1638045f71c810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!114 &114614172372231878
 MonoBehaviour:
   m_ObjectHideFlags: 1
