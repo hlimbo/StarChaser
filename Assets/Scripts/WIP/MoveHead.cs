@@ -12,6 +12,10 @@ public class MoveHead : MonoBehaviour {
 
     [SerializeField]
     private GameObject biteBox;
+    [SerializeField]
+    private GameObject[] headSpawns;
+    [SerializeField]
+    private int headSpawnCount = 6;
 
     public float TotalDuration
     {
@@ -31,6 +35,13 @@ public class MoveHead : MonoBehaviour {
 
     void Awake()
     {
+        headSpawns = new GameObject[headSpawnCount];
+        for(int i = 0;i < headSpawnCount;++i)
+        {
+            headSpawns[i] = transform.Find("headSpawn" + i).gameObject;
+            headSpawns[i].SetActive(false);
+        }
+
         biteBox = transform.GetChild(0).gameObject;
         biteBox.GetComponent<BoxCollider2D>().enabled = false;
         originalPos = transform.position;
@@ -62,10 +73,18 @@ public class MoveHead : MonoBehaviour {
         //bite animation starts here
         anim.SetBool("canBite", true);
         biteBox.GetComponent<BoxCollider2D>().enabled = true;
+        ToggleHeadSpawns(true);
         yield return new WaitForSeconds(timeToBite);
+        ToggleHeadSpawns(false);
         biteBox.GetComponent<BoxCollider2D>().enabled = false;
         anim.SetBool("canBite", false);
         yield return null;
+    }
+
+    private void ToggleHeadSpawns(bool toggle)
+    {
+        foreach (GameObject headSpawn in headSpawns)
+            headSpawn.SetActive(toggle);
     }
 
     private bool ApproxEqual(Vector3 a, Vector3 b, float tolerance)
