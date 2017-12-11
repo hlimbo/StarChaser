@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 58996362262459824}
   - component: {fileID: 114614172372231878}
   - component: {fileID: 114281575434152676}
+  - component: {fileID: 95915415060193856}
   m_Layer: 0
   m_Name: Flying Enemy Type 2
   m_TagString: Enemy
@@ -61,6 +62,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0141506195, y: 0}
   serializedVersion: 2
   m_Radius: 0.7092638
+--- !u!95 &95915415060193856
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071619230108758}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114057541179564762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -251,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7e3923ed5085a9488ff6eadc34fbaa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 60
+  hp: 120
   isReceivingDamage: 0
   elapsedDamageTime: 0
 --- !u!114 &114655824848975072
