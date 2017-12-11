@@ -24,7 +24,8 @@ GameObject:
   - component: {fileID: 114380479847832480}
   - component: {fileID: 114655824848975072}
   - component: {fileID: 58996362262459824}
-  - component: {fileID: 114887185314257092}
+  - component: {fileID: 114614172372231878}
+  - component: {fileID: 114281575434152676}
   m_Layer: 0
   m_Name: Flying Enemy Type 2
   m_TagString: Enemy
@@ -72,6 +73,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.85
+--- !u!114 &114281575434152676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071619230108758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06064d54a18dc214c82713c0b0a342cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114380479847832480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -228,6 +240,20 @@ MonoBehaviour:
     unfocusRange: 0
     loopsTurning: 0
     turns: []
+--- !u!114 &114614172372231878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071619230108758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e3923ed5085a9488ff6eadc34fbaa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 60
+  isReceivingDamage: 0
+  elapsedDamageTime: 0
 --- !u!114 &114655824848975072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -241,21 +267,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaknessTags:
   - Laser
---- !u!114 &114887185314257092
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1071619230108758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecf927bab85996c4d8ffe355d708d6cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 30
-  phase: 0
-  isReceivingDamage: 0
-  elapsedDamageTime: 0
 --- !u!212 &212026172946514810
 SpriteRenderer:
   m_ObjectHideFlags: 1
