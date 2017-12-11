@@ -17,7 +17,7 @@ public class LoadBoss : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("I'm working!");
-        SceneManager.LoadScene("TouchControlsFinal");
+        if(col.name.Equals("playerShip"))
+            SceneManager.LoadScene("TouchControlsFinal");
     }
 }
