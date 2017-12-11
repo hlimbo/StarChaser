@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Experimental/Credits.unity
     guid: e4eebf08c19454a4d87c81f93422999e
+  - enabled: 1
+    path: Assets/Scenes/Experimental/WinScene.unity
+    guid: 1506f27a84a784870aafa09ba80fbb4d

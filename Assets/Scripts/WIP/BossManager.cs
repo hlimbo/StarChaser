@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 
 public class BossManager : MonoBehaviour {
 
@@ -126,7 +127,8 @@ public class BossManager : MonoBehaviour {
             case Phase.DEAD:
                 head.SetActive(false);
                 mouth.SetActive(false);
-                goldStar.SetActive(true);
+                //goldStar.SetActive(true);
+                SceneManager.LoadScene("WinScene");
                 break;
         }
     }
