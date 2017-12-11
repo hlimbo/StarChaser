@@ -5,20 +5,24 @@ using UnityEngine;
 //used as an animation event
 public class ToggleBossMouth : MonoBehaviour {
 
-    private Collider2D hitbox;
+    [SerializeField]
+    private GameObject mouth;
 
     void Awake()
     {
-        hitbox = GameObject.Find("Mouth").GetComponent<Collider2D>();
+        mouth = GameObject.Find("Mouth");
+        mouth.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     public void OpenMouth()
     {
-        hitbox.enabled = true;
+        mouth.GetComponent<BoxCollider2D>().enabled = true;
+        mouth.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     public void CloseMouth()
     {
-        hitbox.enabled = false;
+        mouth.GetComponent<BoxCollider2D>().enabled = false;
+        mouth.GetComponent<SpriteRenderer>().enabled = false;
     }
 }

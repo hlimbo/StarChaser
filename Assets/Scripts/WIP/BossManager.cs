@@ -103,6 +103,7 @@ public class BossManager : MonoBehaviour {
                 attackPattern2.enabled = true;
                 break;
             case Phase.PSYCHO:
+                attackPattern2.enabled = false;
                 head.SetActive(true);
                 head.GetComponent<Animator>().SetBool("canOpenMouth", true);
                 head.GetComponent<Collider2D>().enabled = false;

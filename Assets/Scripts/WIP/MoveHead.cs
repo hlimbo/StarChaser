@@ -32,7 +32,7 @@ public class MoveHead : MonoBehaviour {
     void Awake()
     {
         biteBox = transform.GetChild(0).gameObject;
-        biteBox.SetActive(false);
+        biteBox.GetComponent<BoxCollider2D>().enabled = false;
         originalPos = transform.position;
         anim = GetComponent<Animator>();
         enabled = false;
@@ -61,9 +61,9 @@ public class MoveHead : MonoBehaviour {
         isMovingForwards = false;
         //bite animation starts here
         anim.SetBool("canBite", true);
-        biteBox.SetActive(true);
+        biteBox.GetComponent<BoxCollider2D>().enabled = true;
         yield return new WaitForSeconds(timeToBite);
-        biteBox.SetActive(false);
+        biteBox.GetComponent<BoxCollider2D>().enabled = false;
         anim.SetBool("canBite", false);
         yield return null;
     }
