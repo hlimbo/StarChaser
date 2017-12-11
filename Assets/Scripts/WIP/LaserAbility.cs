@@ -7,7 +7,7 @@ public class LaserAbility : MonoBehaviour {
     [SerializeField]
     public GameObject butt, body, tip;
     [SerializeField]
-    public float y_offset = 0.04f;
+    private float y_offset = 0.04f;
 
     [Tooltip("Where the raycast begins from")]
     public Transform originPoint;
