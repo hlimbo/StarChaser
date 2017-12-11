@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 114772052628146062}
   - component: {fileID: 114489526382908600}
   - component: {fileID: 114494793239829616}
+  - component: {fileID: 114560335986374008}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: BossPhase1
@@ -294,6 +295,7 @@ GameObject:
   - component: {fileID: 114248459872496746}
   - component: {fileID: 114276538990280534}
   - component: {fileID: 114494649493317346}
+  - component: {fileID: 114875867673919812}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: BossPhase1
@@ -353,6 +355,7 @@ GameObject:
   - component: {fileID: 114958327049970978}
   - component: {fileID: 114722578480194098}
   - component: {fileID: 114125337604963662}
+  - component: {fileID: 114881104874877358}
   m_Layer: 0
   m_Name: Head
   m_TagString: BossPhase2
@@ -1321,6 +1324,19 @@ MonoBehaviour:
     unfocusRange: 0
     loopsTurning: 0
     turns: []
+--- !u!114 &114560335986374008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1249061078814534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe18e6952977c64428cdbffcaeae2663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1150722124046788, guid: 0fc47452a3adaa04f8c6a6b97880bfa4,
+    type: 2}
 --- !u!114 &114722578480194098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1478,6 +1494,19 @@ MonoBehaviour:
     unfocusRange: 0
     loopsTurning: 0
     turns: []
+--- !u!114 &114875867673919812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1750234582242916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe18e6952977c64428cdbffcaeae2663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1150722124046788, guid: 0fc47452a3adaa04f8c6a6b97880bfa4,
+    type: 2}
 --- !u!114 &114876584802024718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1502,6 +1531,19 @@ MonoBehaviour:
   bossPhase: 0
   attackPattern1: {fileID: 0}
   attackPattern2: {fileID: 0}
+--- !u!114 &114881104874877358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959336028403586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae841018f26dcd443ab13ecb23f48fbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1150722124046788, guid: 0fc47452a3adaa04f8c6a6b97880bfa4,
+    type: 2}
 --- !u!114 &114923256627072686
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -202,6 +202,10 @@ GameObject:
   - component: {fileID: 454976631}
   - component: {fileID: 454976630}
   - component: {fileID: 454976629}
+  - component: {fileID: 454976634}
+  - component: {fileID: 454976633}
+  - component: {fileID: 454976632}
+  - component: {fileID: 454976635}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -291,6 +295,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &454976632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 454976628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2ba6c5c772b1944b5bd9303dfc5060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 3
+--- !u!114 &454976633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 454976628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe18e6952977c64428cdbffcaeae2663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1150722124046788, guid: 0fc47452a3adaa04f8c6a6b97880bfa4,
+    type: 2}
+--- !u!114 &454976634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 454976628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceaa8271c2bb04e9db48f5363c9c7fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaknessTags:
+  - Laser
+--- !u!50 &454976635
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 454976628}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &549591263
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +366,7 @@ GameObject:
   - component: {fileID: 549591265}
   m_Layer: 2
   m_Name: laser_tip
-  m_TagString: Untagged
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -487,6 +549,48 @@ Transform:
   m_Father: {fileID: 1695922712}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1442738688
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4675899060435094, guid: 0fc47452a3adaa04f8c6a6b97880bfa4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.5524049
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675899060435094, guid: 0fc47452a3adaa04f8c6a6b97880bfa4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.1793028
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675899060435094, guid: 0fc47452a3adaa04f8c6a6b97880bfa4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.05078125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675899060435094, guid: 0fc47452a3adaa04f8c6a6b97880bfa4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675899060435094, guid: 0fc47452a3adaa04f8c6a6b97880bfa4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675899060435094, guid: 0fc47452a3adaa04f8c6a6b97880bfa4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675899060435094, guid: 0fc47452a3adaa04f8c6a6b97880bfa4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675899060435094, guid: 0fc47452a3adaa04f8c6a6b97880bfa4, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0fc47452a3adaa04f8c6a6b97880bfa4, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1695922711
 GameObject:
   m_ObjectHideFlags: 0
