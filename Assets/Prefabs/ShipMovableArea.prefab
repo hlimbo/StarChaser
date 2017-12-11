@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1119304941269548
 GameObject:
   m_ObjectHideFlags: 0
@@ -36,6 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4698145608599514}
   - component: {fileID: 114341530426648832}
+  - component: {fileID: 114424455625631668}
   m_Layer: 0
   m_Name: LaserPivot
   m_TagString: Untagged
@@ -58,7 +59,22 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
+--- !u!1 &1406959677682752
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4330740126281288}
+  m_Layer: 0
+  m_Name: originPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1407422719133946
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,17 +133,17 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4039782149270772}
-  - component: {fileID: 61732713280916554}
   - component: {fileID: 50540176592585134}
   - component: {fileID: 114198527859496618}
   - component: {fileID: 212537944336364850}
+  - component: {fileID: 70827306049276028}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1590943272351406
 GameObject:
   m_ObjectHideFlags: 1
@@ -137,13 +153,16 @@ GameObject:
   m_Component:
   - component: {fileID: 4076776697976622}
   - component: {fileID: 212354392449653816}
-  m_Layer: 0
+  - component: {fileID: 114115448572955024}
+  - component: {fileID: 50706833947098510}
+  - component: {fileID: 58480777484208814}
+  m_Layer: 2
   m_Name: laser_tip
-  m_TagString: Untagged
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1645090474257272
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1504585012635284}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4698145608599514}
@@ -238,8 +257,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1590943272351406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.9078, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.8190006, z: 1}
+  m_LocalPosition: {x: 0, y: 1.83, z: 0}
+  m_LocalScale: {x: 1.5, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4698145608599514}
   m_RootOrder: 3
@@ -283,11 +302,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1190609519088794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.971, z: 0}
-  m_LocalScale: {x: 1.5, y: 9.095003, z: 1}
+  m_LocalPosition: {x: 0, y: 0.12, z: 0}
+  m_LocalScale: {x: 1.5, y: 9, z: 1}
   m_Children: []
   m_Father: {fileID: 4698145608599514}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4330740126281288
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1406959677682752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4698145608599514}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4339558886149734
 Transform:
@@ -322,8 +354,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1085273096129738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.003, y: 0.024, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.8190006, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4698145608599514}
   m_RootOrder: 1
@@ -342,6 +374,7 @@ Transform:
   - {fileID: 4617974071736872}
   - {fileID: 4141088107199844}
   - {fileID: 4076776697976622}
+  - {fileID: 4330740126281288}
   m_Father: {fileID: 4091802972966006}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -418,6 +451,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!50 &50706833947098510
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590943272351406}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50789396931760288
 Rigidbody2D:
   serializedVersion: 4
@@ -453,6 +506,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!58 &58480777484208814
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590943272351406}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.09
 --- !u!58 &58578651158182360
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -518,8 +586,8 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.25}
   m_EdgeRadius: 0
---- !u!61 &61732713280916554
-BoxCollider2D:
+--- !u!70 &70827306049276028
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -530,19 +598,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.34596157, y: 0.46292746}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.42666668, y: 0.6166667}
-    newSize: {x: 1.28, y: 1.85}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 25.909159, y: 2.0391939}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0.3083334}
+  m_Size: {x: 0.32, y: 0.6166667}
+  m_Direction: 0
 --- !u!82 &82066769709154172
 AudioSource:
   m_ObjectHideFlags: 1
@@ -748,6 +806,20 @@ MonoBehaviour:
   - BossPhase1
   - BossPhase2
   - BossPhase3
+--- !u!114 &114115448572955024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590943272351406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd826097823db14291a896870f887f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDPS: 20
+  frequency: 0.02
+  damagePerFrame: 0
 --- !u!114 &114153434193908908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -802,6 +874,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagToAbsorb: Bullet
+--- !u!114 &114424455625631668
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119304941269548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d38fe6bbcb75ff4fb3038ee28cb45d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  butt: {fileID: 0}
+  body: {fileID: 0}
+  tip: {fileID: 0}
+  y_offset: 0.04
+  originPoint: {fileID: 4330740126281288}
 --- !u!114 &114440561684665200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1017,8 +1105,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1261959083
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c62418360c639fe449997522b9ea1efc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

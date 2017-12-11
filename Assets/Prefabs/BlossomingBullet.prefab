@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114451145137725244}
   - component: {fileID: 114203502240986690}
   - component: {fileID: 58850591160997212}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BlossomingBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1699632257
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300024, guid: f20a71c0019ca1542a7a232c9a79eb03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
