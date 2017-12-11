@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4725847808708706}
   - component: {fileID: 212658375280899176}
   - component: {fileID: 114098869471390866}
+  - component: {fileID: 114261823237779758}
+  - component: {fileID: 58053253359133742}
+  - component: {fileID: 114112271335417232}
   m_Layer: 0
   m_Name: Ground Enemy Type 1
   m_TagString: Untagged
@@ -34,13 +37,28 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1344858272257328}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!58 &58053253359133742
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1344858272257328}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0083729625, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.19440573
 --- !u!114 &114098869471390866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,10 +73,10 @@ MonoBehaviour:
   emitters:
   - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
       type: 2}
-    offset: {x: -0.5, y: 0.5, z: 0}
+    offset: {x: -0.3, y: -0.5, z: 0}
     initDelay: 0
     fireRate: 0.8
-    angle: 70
+    angle: 160
     speed: 1
     acceleration: 0
     fuel: 0
@@ -67,10 +85,10 @@ MonoBehaviour:
     turns: []
   - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
       type: 2}
-    offset: {x: -0.5, y: 0, z: 0}
+    offset: {x: 0, y: -0.5, z: 0}
     initDelay: 0
     fireRate: 0.7
-    angle: 90
+    angle: 180
     speed: 1
     acceleration: 0
     fuel: 0
@@ -79,16 +97,44 @@ MonoBehaviour:
     turns: []
   - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
       type: 2}
-    offset: {x: -0.5, y: -0.5, z: 0}
+    offset: {x: 0.3, y: -0.5, z: 0}
     initDelay: 0
     fireRate: 0.8
-    angle: 110
+    angle: 200
     speed: 1
     acceleration: 0
     fuel: 0
     unfocusRange: 0
     loopsTurning: 0
     turns: []
+--- !u!114 &114112271335417232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1344858272257328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf927bab85996c4d8ffe355d708d6cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 20
+  phase: 0
+  isReceivingDamage: 0
+  elapsedDamageTime: 0
+--- !u!114 &114261823237779758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1344858272257328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceaa8271c2bb04e9db48f5363c9c7fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaknessTags:
+  - Laser
 --- !u!212 &212658375280899176
 SpriteRenderer:
   m_ObjectHideFlags: 1

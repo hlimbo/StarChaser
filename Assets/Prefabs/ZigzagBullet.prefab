@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4651442972439886}
   - component: {fileID: 212538315573243066}
-  - component: {fileID: 70486033135553344}
   - component: {fileID: 114309604803184676}
   - component: {fileID: 114435205218964586}
   - component: {fileID: 114036348747916150}
   - component: {fileID: 114767122728699796}
+  - component: {fileID: 60495514929074454}
   m_Layer: 0
   m_Name: ZigzagBullet
   m_TagString: Bullet
@@ -40,13 +40,13 @@ Transform:
   m_GameObject: {fileID: 1571705040099150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.09, y: -3.96, z: -0}
-  m_LocalScale: {x: 0.1, y: 0.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &70486033135553344
-CapsuleCollider2D:
+--- !u!60 &60495514929074454
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -58,8 +58,25 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
-  m_Direction: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.07, y: 0.14}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.024999999, y: 0.07}
+      - {x: -0.035, y: 0.06}
+      - {x: -0.035, y: -0.06}
+      - {x: -0.024999999, y: -0.07}
+      - {x: 0.024999999, y: -0.07}
+      - {x: 0.035, y: -0.01}
+      - {x: 0.035, y: 0.06}
+      - {x: 0.024999999, y: 0.07}
 --- !u!114 &114036348747916150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,7 +144,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -143,7 +159,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -152,8 +167,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d55c88ce18d68b4bbc453461bce959c, type: 3}
-  m_Color: {r: 0.862069, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300004, guid: f20a71c0019ca1542a7a232c9a79eb03, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
