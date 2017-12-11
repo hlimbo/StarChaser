@@ -12,8 +12,11 @@ public class BossExplosion : Explosion {
 
     private void OnDisable()
     {
-        GameObject explosion = Instantiate<GameObject>(explosionPrefab, transform.position, Quaternion.identity, null);
-        explosion.GetComponent<ParticleSystem>().Play();
+        if (bm.BossPhase == BossManager.Phase.DEAD)
+        {
+            GameObject explosion = Instantiate<GameObject>(explosionPrefab, transform.position, Quaternion.identity, null);
+            explosion.GetComponent<ParticleSystem>().Play();
+        }
     }
 
 
