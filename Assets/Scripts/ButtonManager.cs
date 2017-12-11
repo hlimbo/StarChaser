@@ -10,19 +10,10 @@ public class ButtonManager : MonoBehaviour {
 	GameObject gameObject;
 
 
-	public void Start() {
-		if (GameObject.Find ("main_menu_audio")) {
-			AudioSource audioSource = GameObject.Find ("main_menu_audio").GetComponent<AudioSource>();
-			if (!audioSource.isPlaying) {
-				audioSource.Play ();
-			}
-			Debug.Log (audioSource);
-		}
 
-	}
 	public void switchToScene(string sceneToLoad) {
             SceneManager.LoadSceneAsync (sceneToLoad);
-		if (!(sceneToLoad == "Credits" || sceneToLoad == "Settings")) {
+		if (!(sceneToLoad == "Credits" || sceneToLoad == "Settings" || sceneToLoad == "MainMenu")) {
 			//Destroy the audio if it's not on Credits or Settings scene
 			Destroy(GameObject.Find("main_menu_audio"));
 		}

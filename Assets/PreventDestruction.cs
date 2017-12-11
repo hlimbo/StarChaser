@@ -10,7 +10,18 @@ public class PreventDestruction : MonoBehaviour {
 		
 	}
 
-	void Start() {
-		DontDestroyOnLoad(GetComponent<AudioSource>());
+
+	public void Awake() {
+
+		if (GameObject.FindGameObjectsWithTag ("main_menu_audio").Length == 1) {
+
+			AudioSource audioSource = GetComponent<AudioSource> ();
+			DontDestroyOnLoad (GetComponent<AudioSource> ());
+			audioSource.Play ();
+
+
+		}
+
 	}
 }
+ 

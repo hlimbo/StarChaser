@@ -24,6 +24,7 @@ TagManager:
   - BossPhase1
   - BossPhase2
   - BossPhase3
+  - main_menu_audio
   layers:
   - Default
   - TransparentFX
