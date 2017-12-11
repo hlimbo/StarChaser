@@ -5,6 +5,12 @@ using UnityEngine.Assertions;
 
 public class BossManager : MonoBehaviour {
 
+    public enum HitLayer
+    {
+        DEFAULT=0,
+        IGNORE_RAYCAST=2
+    }
+
     public enum Phase
     {
         EASY=0, //hands
@@ -97,17 +103,21 @@ public class BossManager : MonoBehaviour {
         {
             case Phase.EASY:
                 attackPattern1.enabled = true;
+                head.layer = (int)HitLayer.IGNORE_RAYCAST;
                 break;
             case Phase.ANGRY:
+                head.layer = (int)HitLayer.DEFAULT;
                 attackPattern1.enabled = false;
                 attackPattern2.enabled = true;
                 break;
             case Phase.PSYCHO:
                 attackPattern2.enabled = false;
                 head.SetActive(true);
+                head.layer = (int)HitLayer.IGNORE_RAYCAST;
                 head.GetComponent<Animator>().SetBool("canOpenMouth", true);
                 head.GetComponent<Collider2D>().enabled = false;
                 mouth.SetActive(true);
+                mouth.layer = (int)HitLayer.DEFAULT;
                 break;
             case Phase.DEAD:
                 head.SetActive(false);
