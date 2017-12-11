@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 4473638353553232}
   - component: {fileID: 61136216852937386}
   - component: {fileID: 114349879181565164}
+  - component: {fileID: 114241964190154180}
   m_Layer: 0
   m_Name: SideAbsorber_R
   m_TagString: SideAbsorber
@@ -177,6 +178,7 @@ GameObject:
   - component: {fileID: 4055106281234730}
   - component: {fileID: 61264641042355984}
   - component: {fileID: 114761201398740850}
+  - component: {fileID: 114302352209979054}
   m_Layer: 0
   m_Name: SideAbsorber_L
   m_TagString: SideAbsorber
@@ -769,6 +771,38 @@ MonoBehaviour:
   isInvincible: 0
   sideAbsorberGO_L: {fileID: 0}
   sideAbsorberGO_R: {fileID: 0}
+--- !u!114 &114241964190154180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1417971733348354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee99080f7e9649d45aeaf51526f5de3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 0.5568628, g: 0.8352941, b: 1, a: 1}
+  frequency: 0.5
+--- !u!114 &114302352209979054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738039712815766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee99080f7e9649d45aeaf51526f5de3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 0.5588235, g: 0.83569986, b: 1, a: 1}
+  frequency: 0.5
 --- !u!114 &114341530426648832
 MonoBehaviour:
   m_ObjectHideFlags: 1
