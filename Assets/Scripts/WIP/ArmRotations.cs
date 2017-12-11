@@ -33,13 +33,8 @@ public class ArmRotations : MonoBehaviour {
     }
     
     // Update is called once per frame
-    void Update () {
-
-        if(moveArms.isMovingForwards)
-        {
-            canRotate = true;
-            StartCoroutine(moveArms.ChangeMoveDirectionDelay());
-        }
+    void Update ()
+    {
 
         if (moveArms.hasReturned)
         {

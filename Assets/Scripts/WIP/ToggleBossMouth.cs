@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,9 +32,9 @@ public class ToggleBossMouth : MonoBehaviour {
         mouth.GetComponent<BoxCollider2D>().enabled = true;
         mouth.GetComponent<SpriteRenderer>().enabled = true;
         ToggleMouthSpawns(true);
-        canFireMouthBullets = !canFireMouthBullets;
-        if (canFireMouthBullets)
-            mouth.GetComponent<Emitter>().enabled = true;
+        //canFireMouthBullets = !canFireMouthBullets;
+        //if (canFireMouthBullets)
+        //    mouth.GetComponent<Emitter>().enabled = true;
     }
 
     public void CloseMouth()
@@ -42,8 +42,8 @@ public class ToggleBossMouth : MonoBehaviour {
         mouth.GetComponent<BoxCollider2D>().enabled = false;
         mouth.GetComponent<SpriteRenderer>().enabled = false;
         ToggleMouthSpawns(false);
-        if (canFireMouthBullets)
-            mouth.GetComponent<Emitter>().enabled = false;
+        //if (canFireMouthBullets)
+        //    mouth.GetComponent<Emitter>().enabled = false;
     }
 
     private void ToggleMouthSpawns(bool toggle)
