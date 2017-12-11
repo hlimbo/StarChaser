@@ -14,6 +14,7 @@ public class KillExplosionOverTime : MonoBehaviour {
     IEnumerator KillOverTime()
     {
         yield return new WaitForSeconds(duration);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
+
 }
