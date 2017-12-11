@@ -24,7 +24,8 @@ GameObject:
   - component: {fileID: 114331892229432344}
   - component: {fileID: 114306145647617870}
   - component: {fileID: 58783621563511796}
-  - component: {fileID: 114098023367172212}
+  - component: {fileID: 114624243364065778}
+  - component: {fileID: 114214973027447084}
   m_Layer: 0
   m_Name: Flying Enemy Type 3
   m_TagString: Enemy
@@ -84,7 +85,7 @@ MonoBehaviour:
     unfocusRange: 0
     loopsTurning: 0
     turns: []
---- !u!114 &114098023367172212
+--- !u!114 &114214973027447084
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -92,13 +93,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1929489185411508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecf927bab85996c4d8ffe355d708d6cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 06064d54a18dc214c82713c0b0a342cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 5
-  phase: 0
-  isReceivingDamage: 0
-  elapsedDamageTime: 0
 --- !u!114 &114306145647617870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,6 +121,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+--- !u!114 &114624243364065778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1929489185411508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e3923ed5085a9488ff6eadc34fbaa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 5
+  isReceivingDamage: 0
+  elapsedDamageTime: 0
 --- !u!212 &212374206421245928
 SpriteRenderer:
   m_ObjectHideFlags: 1

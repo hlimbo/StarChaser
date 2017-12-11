@@ -25,7 +25,8 @@ GameObject:
   - component: {fileID: 95521051833917724}
   - component: {fileID: 114410966184086406}
   - component: {fileID: 58209475627816166}
-  - component: {fileID: 114585045984308064}
+  - component: {fileID: 114516220171666100}
+  - component: {fileID: 114352707279149962}
   m_Layer: 0
   m_Name: Flying Enemy Type 1
   m_TagString: Enemy
@@ -111,9 +112,20 @@ MonoBehaviour:
     speed: 3
     acceleration: 0
     fuel: 0.1
-    unfocusRange: 3.5
+    unfocusRange: 0
     loopsTurning: 0
     turns: []
+--- !u!114 &114352707279149962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1803979405611204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06064d54a18dc214c82713c0b0a342cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114410966184086406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaknessTags:
   - Laser
---- !u!114 &114585045984308064
+--- !u!114 &114516220171666100
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -135,11 +147,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1803979405611204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecf927bab85996c4d8ffe355d708d6cd, type: 3}
+  m_Script: {fileID: 11500000, guid: d7e3923ed5085a9488ff6eadc34fbaa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 15
-  phase: 0
+  hp: 20
   isReceivingDamage: 0
   elapsedDamageTime: 0
 --- !u!212 &212563770621182484
