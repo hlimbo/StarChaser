@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Experimental/MainMenu.unity
     guid: 71c0075e33cfd4b4e9f825f6342b831b
+  - enabled: 1
+    path: Assets/Scenes/Experimental/Level1Exp.unity
+    guid: 856e297df77a24b42a8369220bc0b28d
