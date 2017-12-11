@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114927958191084914}
   - component: {fileID: 114836226202152114}
   - component: {fileID: 58990267515485038}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BlossomingBullet2
   m_TagString: Bullet
   m_Icon: {fileID: 0}

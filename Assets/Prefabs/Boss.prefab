@@ -183,7 +183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4463976105808222}
   - component: {fileID: 61266571876761886}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BiteBox
   m_TagString: BossPhase2
   m_Icon: {fileID: 0}
