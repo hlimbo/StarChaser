@@ -64,15 +64,9 @@ public class MoveArms : MonoBehaviour {
             enabled = false;
     }
 
-    public IEnumerator ChangeMoveDirectionDelay()
+    IEnumerator ChangeMoveDirectionDelay()
     {
-        float startTime = Time.time;
-        float elapsedTime = Time.time - startTime;
-        while (elapsedTime < changeDirectionDelay)
-        {
-            yield return new WaitForSeconds(1f);
-            elapsedTime = Time.time - startTime;
-        }
+        yield return new WaitForSeconds(changeDirectionDelay);
         isMovingForwards = false;
         yield return null;
     }

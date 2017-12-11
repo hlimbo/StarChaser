@@ -5,30 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour {
 //Nick: I don't know what you want to keep here so I'll leave these commented out for now
-//<<<<<<< HEAD
-//    public void switchToScene(string sceneToLoad) {
-//        Debug.Log ("clcik");
-//        SceneManager.LoadSceneAsync (sceneToLoad);
-//    }
-//    public void creditsGoBack(string sceneToLoad) {
-//        SceneManager.LoadSceneAsync (sceneToLoad);
-//        Debug.Log ("clcik");
-//    }
-//=======
-    public void playButtonClicked(string sceneToLoad) {
-        SceneManager.LoadSceneAsync (sceneToLoad);
-    }
+//I removed the lines I don't need. -- Nick
 
-    public void creditsButtonClicked(string sceneToLoad) {
-        SceneManager.LoadSceneAsync (sceneToLoad);
-    }
+	GameObject gameObject;
 
-    public void settingsButtonClicked(string sceneToLoad) {
-        SceneManager.LoadSceneAsync (sceneToLoad);
-    }
 
-    void FixedUpdate() {
 
-    }
-//>>>>>>> 8f8a8c9d9ebfa66774a8502e306a96fe3eb5318f
+	public void switchToScene(string sceneToLoad) {
+            SceneManager.LoadSceneAsync (sceneToLoad);
+		if (!(sceneToLoad == "Credits" || sceneToLoad == "Settings" || sceneToLoad == "MainMenu")) {
+			//Destroy the audio if it's not on Credits or Settings scene
+			Destroy(GameObject.Find("main_menu_audio"));
+		}
+	}
+
 }

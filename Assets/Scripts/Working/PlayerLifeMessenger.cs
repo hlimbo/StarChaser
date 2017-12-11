@@ -30,6 +30,7 @@ public class PlayerLifeMessenger : MonoBehaviour, ILifeMessenger {
         hearts[Mathf.Clamp(lives - 1,0,maxLives - 1)].enabled = false;
         lives = Mathf.Clamp(--lives, 0, maxLives);
         aSrc.Play();
+       // Handheld.Vibrate();//annoying af when playing
     }
 
     public void GainLife()

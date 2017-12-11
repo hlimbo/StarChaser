@@ -25,11 +25,18 @@ public class BossManager : MonoBehaviour {
     [SerializeField]
     private GameObject rightHand;
     [SerializeField]
+    private GameObject center;
+    [SerializeField]
     private GameObject head;
     [SerializeField]
     private GameObject mouth;
     [SerializeField]
     private Phase bossPhase;
+
+    [SerializeField]
+    private BossAttackPattern1 attackPattern1;
+    [SerializeField]
+    private BossAttackPattern2 attackPattern2;
 
     public bool IsDead
     {
@@ -50,7 +57,7 @@ public class BossManager : MonoBehaviour {
                 return Phase.EASY;
             if (headHP > 0f)
                 return Phase.ANGRY;
-            if(mouthHP > 0)
+            if (mouthHP > 0)
                 return Phase.PSYCHO;
 
             return Phase.DEAD;
@@ -64,6 +71,10 @@ public class BossManager : MonoBehaviour {
         rightHand = GameObject.Find("RightHand");
         head = GameObject.Find("Head");
         mouth = GameObject.Find("Mouth");
+        center = GameObject.Find("Center");
+
+        attackPattern1 = center.GetComponent<BossAttackPattern1>();
+        attackPattern2 = head.GetComponent<BossAttackPattern2>();
 
         //initialize hp values per body part
         {
@@ -84,9 +95,17 @@ public class BossManager : MonoBehaviour {
     {
         switch (bossPhase)
         {
+            case Phase.EASY:
+                attackPattern1.enabled = true;
+                break;
+            case Phase.ANGRY:
+                attackPattern1.enabled = false;
+                attackPattern2.enabled = true;
+                break;
             case Phase.PSYCHO:
+                attackPattern2.enabled = false;
                 head.SetActive(true);
-                head.GetComponent<Animator>().SetBool("canBite", true);
+                head.GetComponent<Animator>().SetBool("canOpenMouth", true);
                 head.GetComponent<Collider2D>().enabled = false;
                 mouth.SetActive(true);
                 break;
@@ -110,6 +129,7 @@ public class BossManager : MonoBehaviour {
                 headHP = SetHP(head);
                 break;
             case Phase.PSYCHO:
+                head.GetComponent<Emitter>().enabled = false;
                 mouthHP = SetHP(mouth);
                 break;
             case Phase.DEAD:
