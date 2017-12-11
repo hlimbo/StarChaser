@@ -44,6 +44,8 @@ public class BossManager : MonoBehaviour {
     [SerializeField]
     private BossAttackPattern2 attackPattern2;
 
+    public GameObject goldStar;
+
     public bool IsDead
     {
         get { return bossPhase == Phase.DEAD; }
@@ -78,6 +80,8 @@ public class BossManager : MonoBehaviour {
         head = GameObject.Find("Head");
         mouth = GameObject.Find("Mouth");
         center = GameObject.Find("Center");
+        goldStar = GameObject.Find("goldStar");
+        goldStar.SetActive(false);
 
         attackPattern1 = center.GetComponent<BossAttackPattern1>();
         attackPattern2 = head.GetComponent<BossAttackPattern2>();
@@ -122,6 +126,7 @@ public class BossManager : MonoBehaviour {
             case Phase.DEAD:
                 head.SetActive(false);
                 mouth.SetActive(false);
+                goldStar.SetActive(true);
                 break;
         }
     }
