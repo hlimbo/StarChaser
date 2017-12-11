@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitters:
-  - projectilePrefab: {fileID: 1364018551571082, guid: 3da3d8d7b5473499ebf5a639a13b9425,
+  - projectilePrefab: {fileID: 1886102820889704, guid: 67970789a71cd724da4f364aa7fd6491,
       type: 2}
     offset: {x: 0, y: 0, z: 0}
     initDelay: 0
@@ -1517,7 +1517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitters:
-  - projectilePrefab: {fileID: 1364018551571082, guid: 3da3d8d7b5473499ebf5a639a13b9425,
+  - projectilePrefab: {fileID: 1886102820889704, guid: 67970789a71cd724da4f364aa7fd6491,
       type: 2}
     offset: {x: 0, y: 0, z: 0}
     initDelay: 0
