@@ -189,12 +189,12 @@ Prefab:
     - target: {fileID: 224192085511770250, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 179.5
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 224192085511770250, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 319
+      value: 302
       objectReference: {fileID: 0}
     - target: {fileID: 224192085511770250, guid: a497f89451eef9740abdc76c95122f50,
         type: 2}
@@ -602,11 +602,6 @@ Prefab:
     - target: {fileID: 1407422719133946, guid: 956b0a6665f07704c8cfea0cd92ee5ac, type: 2}
       propertyPath: m_Name
       value: ShipPivot
-      objectReference: {fileID: 0}
-    - target: {fileID: 114440561684665200, guid: 956b0a6665f07704c8cfea0cd92ee5ac,
-        type: 2}
-      propertyPath: maxCharge
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 956b0a6665f07704c8cfea0cd92ee5ac, type: 2}

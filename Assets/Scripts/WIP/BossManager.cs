@@ -129,6 +129,7 @@ public class BossManager : MonoBehaviour {
                 headHP = SetHP(head);
                 break;
             case Phase.PSYCHO:
+                head.GetComponent<Emitter>().enabled = false;
                 mouthHP = SetHP(mouth);
                 break;
             case Phase.DEAD:
