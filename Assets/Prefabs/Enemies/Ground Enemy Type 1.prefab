@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 58053253359133742}
   - component: {fileID: 114975022880447340}
   - component: {fileID: 114980576765107692}
+  - component: {fileID: 114248661217153782}
   m_Layer: 0
   m_Name: Ground Enemy Type 1
   m_TagString: Untagged
@@ -108,6 +109,21 @@ MonoBehaviour:
     unfocusRange: 0
     loopsTurning: 0
     turns: []
+--- !u!114 &114248661217153782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1344858272257328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &114261823237779758
 MonoBehaviour:
   m_ObjectHideFlags: 1

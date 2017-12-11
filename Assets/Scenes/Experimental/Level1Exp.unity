@@ -77,17 +77,15 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFilterTypeDirect: 0
-    m_PVRFilterTypeIndirect: 0
-    m_PVRFilterTypeAO: 0
+    m_PVRFiltering: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-    m_PVRFilteringAtrousPositionSigmaIndirect: 2
-    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -109,8 +107,6 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-    debug:
-      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1001 &3226685
 Prefab:
@@ -247,6 +243,21 @@ GameObject:
   m_PrefabParentObject: {fileID: 1080135796866652, guid: d60f79f83985f014db066b4acd39f132,
     type: 2}
   m_PrefabInternal: {fileID: 17050097}
+--- !u!114 &8447860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 8447859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &8447861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +380,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaknessTags:
   - Laser
+--- !u!114 &48428655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 48428651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!58 &48428657
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -427,6 +453,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaknessTags:
   - Laser
+--- !u!114 &55161446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 55161442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!58 &55161448
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -894,6 +935,21 @@ GameObject:
   m_PrefabParentObject: {fileID: 1716570328761176, guid: 18db8033b55248944a536b53fead7979,
     type: 2}
   m_PrefabInternal: {fileID: 911465690}
+--- !u!114 &297710376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 297710375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &297710377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,6 +1347,21 @@ GameObject:
   m_PrefabParentObject: {fileID: 1249838675511360, guid: 18db8033b55248944a536b53fead7979,
     type: 2}
   m_PrefabInternal: {fileID: 911465690}
+--- !u!114 &446060892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 446060891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &446060893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1482,7 +1553,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1498,7 +1568,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -1599,6 +1668,21 @@ GameObject:
   m_PrefabParentObject: {fileID: 1086488952825436, guid: d60f79f83985f014db066b4acd39f132,
     type: 2}
   m_PrefabInternal: {fileID: 17050097}
+--- !u!114 &586044082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 586044081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &586044083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1667,6 +1751,7 @@ GameObject:
   - component: {fileID: 592120826}
   - component: {fileID: 592120831}
   - component: {fileID: 592120832}
+  - component: {fileID: 592120833}
   m_Layer: 0
   m_Name: Flying Enemy Type 3 (3)
   m_TagString: Enemy
@@ -1766,7 +1851,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1782,7 +1866,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -1826,6 +1909,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06064d54a18dc214c82713c0b0a342cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &592120833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 592120824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!1 &605393118 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1616508074396416, guid: d7046b47a2e868148a0b3016257e2e97,
@@ -1849,6 +1947,21 @@ GameObject:
   m_PrefabParentObject: {fileID: 1409031171057994, guid: d60f79f83985f014db066b4acd39f132,
     type: 2}
   m_PrefabInternal: {fileID: 17050097}
+--- !u!114 &614537347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 614537346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &614537348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1919,6 +2032,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaknessTags:
   - Laser
+--- !u!114 &646594438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 646594434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!58 &646594440
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2044,6 +2172,21 @@ GameObject:
   m_PrefabParentObject: {fileID: 1221206567604994, guid: 18db8033b55248944a536b53fead7979,
     type: 2}
   m_PrefabInternal: {fileID: 911465690}
+--- !u!114 &733838032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733838031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &733838033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2164,6 +2307,21 @@ GameObject:
   m_PrefabParentObject: {fileID: 1247115985447574, guid: d60f79f83985f014db066b4acd39f132,
     type: 2}
   m_PrefabInternal: {fileID: 17050097}
+--- !u!114 &751405802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 751405801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &751405803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2207,6 +2365,21 @@ GameObject:
   m_PrefabParentObject: {fileID: 1614226549819886, guid: bd4b50f6380666c419eef9fcdc973487,
     type: 2}
   m_PrefabInternal: {fileID: 73929413}
+--- !u!114 &859626260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 859626259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &859626261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2675,6 +2848,7 @@ GameObject:
   - component: {fileID: 971772175}
   - component: {fileID: 971772180}
   - component: {fileID: 971772181}
+  - component: {fileID: 971772182}
   m_Layer: 0
   m_Name: Flying Enemy Type 3 (4)
   m_TagString: Enemy
@@ -2774,7 +2948,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2790,7 +2963,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -2834,11 +3006,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06064d54a18dc214c82713c0b0a342cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &971772182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 971772173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!1 &982143330 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1993174681537958, guid: bd4b50f6380666c419eef9fcdc973487,
     type: 2}
   m_PrefabInternal: {fileID: 73929413}
+--- !u!114 &982143331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982143330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &982143332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2995,6 +3197,7 @@ GameObject:
   - component: {fileID: 1113600980}
   - component: {fileID: 1113600985}
   - component: {fileID: 1113600986}
+  - component: {fileID: 1113600987}
   m_Layer: 0
   m_Name: Flying Enemy Type 3 (2)
   m_TagString: Enemy
@@ -3094,7 +3297,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3110,7 +3312,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -3154,6 +3355,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06064d54a18dc214c82713c0b0a342cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1113600987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1113600978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!1 &1120503807 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1555413124042886, guid: d7046b47a2e868148a0b3016257e2e97,
@@ -3186,6 +3402,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaknessTags:
   - Laser
+--- !u!114 &1120503811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1120503807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!58 &1120503813
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3353,6 +3584,21 @@ GameObject:
   m_PrefabParentObject: {fileID: 1527175228847894, guid: 18db8033b55248944a536b53fead7979,
     type: 2}
   m_PrefabInternal: {fileID: 911465690}
+--- !u!114 &1253964643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1253964642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &1253964644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3422,6 +3668,7 @@ GameObject:
   - component: {fileID: 1281741553}
   - component: {fileID: 1281741558}
   - component: {fileID: 1281741559}
+  - component: {fileID: 1281741560}
   m_Layer: 0
   m_Name: Flying Enemy Type 3 (1)
   m_TagString: Enemy
@@ -3521,7 +3768,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3537,7 +3783,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -3581,11 +3826,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06064d54a18dc214c82713c0b0a342cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1281741560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1281741551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!1 &1288199221 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1422957794136318, guid: d60f79f83985f014db066b4acd39f132,
     type: 2}
   m_PrefabInternal: {fileID: 17050097}
+--- !u!114 &1288199222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288199221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &1288199223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3663,6 +3938,21 @@ GameObject:
   m_PrefabParentObject: {fileID: 1543940891914590, guid: d60f79f83985f014db066b4acd39f132,
     type: 2}
   m_PrefabInternal: {fileID: 17050097}
+--- !u!114 &1437686422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1437686421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &1437686423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4271,7 +4561,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -4287,7 +4576,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -4656,6 +4944,21 @@ GameObject:
   m_PrefabParentObject: {fileID: 1940083404242214, guid: bd4b50f6380666c419eef9fcdc973487,
     type: 2}
   m_PrefabInternal: {fileID: 73929413}
+--- !u!114 &1797152727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1797152726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &1797152728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4989,7 +5292,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -5005,7 +5307,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -5365,6 +5666,21 @@ GameObject:
   m_PrefabParentObject: {fileID: 1530608153624504, guid: d60f79f83985f014db066b4acd39f132,
     type: 2}
   m_PrefabInternal: {fileID: 17050097}
+--- !u!114 &2111095180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2111095179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!114 &2111095181
 MonoBehaviour:
   m_ObjectHideFlags: 0

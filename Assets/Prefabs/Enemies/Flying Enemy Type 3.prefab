@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 58783621563511796}
   - component: {fileID: 114624243364065778}
   - component: {fileID: 114214973027447084}
+  - component: {fileID: 114635482919790192}
   m_Layer: 0
   m_Name: Flying Enemy Type 3
   m_TagString: Enemy
@@ -135,6 +136,21 @@ MonoBehaviour:
   hp: 5
   isReceivingDamage: 0
   elapsedDamageTime: 0
+--- !u!114 &114635482919790192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1929489185411508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8fe96064d8c24498feeb7102935f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlashing: 0
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
+  frequency: 0.5
 --- !u!212 &212374206421245928
 SpriteRenderer:
   m_ObjectHideFlags: 1
