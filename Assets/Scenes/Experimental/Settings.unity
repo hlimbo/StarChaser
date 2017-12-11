@@ -176,7 +176,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 163333890}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -145, y: -55, z: 0}
+  m_LocalPosition: {x: -141, y: -97.608, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1295602748}
@@ -184,7 +184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -145, y: -55}
+  m_AnchoredPosition: {x: -141, y: -97.608}
   m_SizeDelta: {x: 60.6, y: 57.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &163333892
@@ -423,7 +423,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b6953ecf258442b4eb772d9dfcdc9489, type: 3}
+    m_Font: {fileID: 12800000, guid: aedb6c6c09439497294a911cfa3fd2e7, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -439,8 +439,6 @@ MonoBehaviour:
 
 
     2) Charge the laser by allowing bullets to graze the sides of the StarChaser.
-
-
 
 
 
@@ -723,7 +721,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1300267497}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 167, y: -53.999996, z: 0}
+  m_LocalPosition: {x: 163, y: -98.608246, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1295602748}
@@ -731,7 +729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 167, y: -54}
+  m_AnchoredPosition: {x: 163, y: -98.608246}
   m_SizeDelta: {x: 156.7, y: 57.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1300267499
@@ -797,7 +795,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1413538805}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14, y: -52.999992, z: 0}
+  m_LocalPosition: {x: -9.397179, y: -97.60826, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1295602748}
@@ -805,7 +803,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14, y: -53}
+  m_AnchoredPosition: {x: -9.397179, y: -97.60827}
   m_SizeDelta: {x: 171.3, y: 171.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413538807
