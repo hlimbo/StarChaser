@@ -12,10 +12,14 @@ public class ButtonManager : MonoBehaviour {
 
 
 	public void switchToScene(string sceneToLoad) {
-            SceneManager.LoadSceneAsync (sceneToLoad);
+		DontDestroyOnLoad(GameObject.Find ("button_beep").GetComponent<AudioSource>());
+		GameObject.Find ("button_beep").GetComponent<AudioSource> ().Play ();
+        SceneManager.LoadSceneAsync (sceneToLoad);
 		if (!(sceneToLoad == "Credits" || sceneToLoad == "Settings" || sceneToLoad == "MainMenu")) {
-			//Destroy the audio if it's not on Credits or Settings scene
+			//Destroy the audio if we're going to play the game
 			Destroy(GameObject.Find("main_menu_audio"));
+			Destroy(GameObject.Find("button_beep"));
+
 		}
 	}
 
