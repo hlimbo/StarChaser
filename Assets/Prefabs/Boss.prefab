@@ -999,13 +999,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitters:
-  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+  - projectilePrefab: {fileID: 1971739847122436, guid: 1a4d31bf10693314087165866f18d88c,
       type: 2}
     offset: {x: 0, y: 0, z: 0}
     initDelay: 0
-    fireRate: 4
+    fireRate: 1
     angle: 0
-    speed: 1.2
+    speed: 2.2
     acceleration: 0
     fuel: 0
     unfocusRange: 0
@@ -1244,13 +1244,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitters:
-  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+  - projectilePrefab: {fileID: 1971739847122436, guid: 1a4d31bf10693314087165866f18d88c,
       type: 2}
     offset: {x: 0, y: 0, z: 0}
     initDelay: 0
-    fireRate: 4
+    fireRate: 1
     angle: 0
-    speed: 1.2
+    speed: 2.2
     acceleration: 0
     fuel: 0
     unfocusRange: 0
@@ -1287,13 +1287,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitters:
-  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+  - projectilePrefab: {fileID: 1971739847122436, guid: 1a4d31bf10693314087165866f18d88c,
       type: 2}
     offset: {x: 0, y: 0, z: 0}
     initDelay: 0
-    fireRate: 4
+    fireRate: 1
     angle: 0
-    speed: 1.2
+    speed: 2.2
     acceleration: 0
     fuel: 0
     unfocusRange: 0
@@ -1377,13 +1377,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitters:
-  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+  - projectilePrefab: {fileID: 1971739847122436, guid: 1a4d31bf10693314087165866f18d88c,
       type: 2}
     offset: {x: 0, y: 0, z: 0}
     initDelay: 0
-    fireRate: 4
+    fireRate: 1
     angle: 0
-    speed: 1.2
+    speed: 2.2
     acceleration: 0
     fuel: 0
     unfocusRange: 0
@@ -1401,13 +1401,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitters:
-  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+  - projectilePrefab: {fileID: 1971739847122436, guid: 1a4d31bf10693314087165866f18d88c,
       type: 2}
     offset: {x: 0, y: 0, z: 0}
     initDelay: 0
-    fireRate: 4
+    fireRate: 1
     angle: 0
-    speed: 1.2
+    speed: 2.2
     acceleration: 0
     fuel: 0
     unfocusRange: 0
@@ -1504,7 +1504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b976b10d6eb5b2645aaed28bcc91653e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackFrequency: 5
+  attackFrequency: 10
 --- !u!114 &114960713005876072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1541,13 +1541,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitters:
-  - projectilePrefab: {fileID: 1430596920637506, guid: 90be24faeac7c428ba2cac59831b7494,
+  - projectilePrefab: {fileID: 1971739847122436, guid: 1a4d31bf10693314087165866f18d88c,
       type: 2}
     offset: {x: 0, y: 0, z: 0}
     initDelay: 0
-    fireRate: 4
+    fireRate: 1
     angle: 0
-    speed: 1.2
+    speed: 2.2
     acceleration: 0
     fuel: 0
     unfocusRange: 0

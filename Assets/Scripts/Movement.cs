@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-    if(transform.position.y <= Camera.main.transform.position.y+Camera.main.orthographicSize+0.125f)
+    if(transform.position.y <= Camera.main.transform.position.y+Camera.main.orthographicSize+0.125f || Camera.main.GetComponent<Movement>().speed == 0f)
             transform.Translate(transform.up * Time.deltaTime * speed, Space.World);
     }
 }
